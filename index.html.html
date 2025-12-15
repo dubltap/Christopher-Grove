@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Christopher Grove | Convergence Architect — AI, Industrial Automation & Creative Technology</title>
+    <meta name="description" content="Christopher Grove is a Convergence Architect with 40 years bridging audio engineering, industrial automation (PLC/SCADA/IIoT), and applied AI/LLM systems. Published author, professional musician, and builder of production AI agents.">
+    <meta name="keywords" content="Christopher Grove, Convergence Architect, AI Automation, LLM, PLC SCADA, Industrial IoT, Agentic AI, AI Safety, Prompt Engineering, Audio Engineering, Seattle AI, dubltap">
+    <meta name="author" content="Christopher Grove">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://christophergrove.com">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Christopher Grove | Convergence Architect">
+    <meta property="og:description" content="40 years building systems—from recording studios to factory floors to AI agents. Where human creativity meets machine intelligence.">
+    <meta property="og:url" content="https://christophergrove.com">
+    <meta property="profile:first_name" content="Christopher">
+    <meta property="profile:last_name" content="Grove">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Christopher Grove | Convergence Architect">
+    <meta name="twitter:description" content="40 years building systems—from recording studios to factory floors to AI agents.">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Christopher Grove",
+        "alternateName": "dubltap",
+        "jobTitle": "Convergence Architect",
+        "description": "AI, Industrial Automation & Creative Technology Leader",
+        "url": "https://christophergrove.com",
+        "sameAs": [
+            "https://linkedin.com/in/christopher-a-grove",
+            "https://github.com/dubltap",
+            "https://kaggle.com/dubltap",
+            "https://hackerone.com/dubltap",
+            "https://promptbase.com/profile/dubltap"
+        ],
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "Large Language Models",
+            "Industrial Automation",
+            "PLC/SCADA Systems",
+            "Audio Engineering",
+            "AI Safety",
+            "Prompt Engineering"
+        ],
+        "alumniOf": [
+            {"@type": "Organization", "name": "Microsoft"},
+            {"@type": "Organization", "name": "USAF Air Command and Staff College"}
+        ],
+        "hasCredential": [
+            {"@type": "EducationalOccupationalCredential", "name": "CBNT - Certified Broadcast Networking Technologist"},
+            {"@type": "EducationalOccupationalCredential", "name": "Azure AI Fundamentals"},
+            {"@type": "EducationalOccupationalCredential", "name": "Siemens FA/SCADA/TIA/AI Certification"}
+        ]
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --teal: #14b8a6;
+            --teal-glow: rgba(20, 184, 166, 0.15);
+            --gold: #fbbf24;
+            --white: #f8fafc;
+            --gray: #94a3b8;
+            --gray-dark: #64748b;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Header */
+        header {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--teal-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(40px, 7vw, 64px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--teal);
+            margin-bottom: 24px;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            font-style: italic;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .contact-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .contact-links a:hover {
+            color: var(--teal);
+            border-color: var(--teal);
+        }
+        
+        /* Sections */
+        section { padding: 60px 0; }
+        
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 24px;
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        p { color: var(--gray); margin-bottom: 16px; }
+        
+        /* Arc Grid */
+        .arc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        
+        .arc-item {
+            background: var(--navy-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 24px;
+            border-top: 3px solid var(--teal);
+        }
+        
+        .arc-year {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .arc-domain {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .arc-desc { font-size: 14px; color: var(--gray-dark); }
+        
+        /* Skills */
+        .skill-category { margin-bottom: 24px; }
+        
+        .skill-category h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            color: var(--gray);
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        
+        /* Portfolio Links */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--navy-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .portfolio-item:hover {
+            border-color: var(--teal);
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-icon { font-size: 24px; }
+        
+        .portfolio-info { flex: 1; }
+        
+        .portfolio-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .portfolio-desc {
+            font-size: 12px;
+            color: var(--gray-dark);
+        }
+        
+        /* Credentials */
+        .credentials-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .credential-badge {
+            width: 8px;
+            height: 8px;
+            background: var(--teal);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .footer-quote {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--teal);
+            color: var(--navy);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+        }
+        
+        @media (max-width: 600px) {
+            header { padding: 60px 0 40px; }
+            section { padding: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="name">Christopher Grove</h1>
+            <p class="title">Convergence Architect</p>
+            <p class="tagline">"40 years building systems—from recording studios to factory floors to AI agents. I understand how humans work WITH machines."</p>
+            <nav class="contact-links">
+                <a href="https://linkedin.com/in/christopher-a-grove" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/dubltap" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://kaggle.com/dubltap" target="_blank" rel="noopener">Kaggle</a>
+                <a href="mailto:chris.a.grove@gmail.com">Email</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- The Arc -->
+        <section>
+            <div class="container">
+                <p class="section-label">The 40-Year Arc</p>
+                <h2>Where Analog Meets Agentic</h2>
+                <p>Every technology I've touched—from analog tape to neural networks—has the same core challenge: making it work with humans. That's my 40-year thesis.</p>
+                
+                <div class="arc-grid">
+                    <article class="arc-item">
+                        <p class="arc-year">1985–Present</p>
+                        <h3 class="arc-domain">Audio & Broadcast</h3>
+                        <p class="arc-desc">Studio/live/broadcast engineering. AES & SBE certified. Professional releases and production.</p>
+                    </article>
+                    <article class="arc-item">
+                        <p class="arc-year">2006–2025</p>
+                        <h3 class="arc-domain">Industrial Automation</h3>
+                        <p class="arc-desc">PLC/SCADA/IIoT systems. Siemens, Rockwell, Schneider certified. Enterprise deployments.</p>
+                    </article>
+                    <article class="arc-item">
+                        <p class="arc-year">2012–2016</p>
+                        <h3 class="arc-domain">Enterprise Scale</h3>
+                        <p class="arc-desc">Microsoft. Global automation programs. ML-integrated forecasting and operations.</p>
+                    </article>
+                    <article class="arc-item">
+                        <p class="arc-year">2018–Present</p>
+                        <h3 class="arc-domain">Applied AI/LLM</h3>
+                        <p class="arc-desc">Production agentic systems. RAG, tool use, evals. 17+ custom GPTs shipped.</p>
+                    </article>
+                    <article class="arc-item">
+                        <p class="arc-year">2024–Present</p>
+                        <h3 class="arc-domain">AI Safety & Security</h3>
+                        <p class="arc-desc">Red-team harnesses. Prompt-injection defense. Enterprise InfoSec approvals.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Expertise -->
+        <section>
+            <div class="container">
+                <p class="section-label">Expertise</p>
+                <h2>Core Competencies</h2>
+                
+                <div class="skill-category">
+                    <h3>AI & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agentic Workflows</span>
+                        <span class="skill-tag">LLM/RAG</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">AI Safety</span>
+                        <span class="skill-tag">Red-Team/Blue-Team</span>
+                        <span class="skill-tag">LLMOps</span>
+                        <span class="skill-tag">PLC/SCADA</span>
+                        <span class="skill-tag">IIoT/Edge</span>
+                        <span class="skill-tag">Digital Twins</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Leadership & Operations</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GTM Strategy</span>
+                        <span class="skill-tag">Solution Architecture</span>
+                        <span class="skill-tag">Enterprise Sales</span>
+                        <span class="skill-tag">24/7 Operations</span>
+                        <span class="skill-tag">KPI Dashboards</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Creative & Production</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Audio Engineering</span>
+                        <span class="skill-tag">Broadcast Systems</span>
+                        <span class="skill-tag">Pro Tools/Logic</span>
+                        <span class="skill-tag">Dante/AES67</span>
+                        <span class="skill-tag">AI Media Pipelines</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio -->
+        <section>
+            <div class="container">
+                <p class="section-label">Portfolio</p>
+                <h2>Work & Projects</h2>
+                
+                <div class="portfolio-grid">
+                    <a href="https://github.com/dubltap" class="portfolio-item" target="_blank" rel="noopener">
+                        <span class="portfolio-icon">💻</span>
+                        <div class="portfolio-info">
+                            <p class="portfolio-name">GitHub</p>
+                            <p class="portfolio-desc">Industrial LLM Agents & Code</p>
+                        </div>
+                    </a>
+                    <a href="https://a.co/d/2CCbooG" class="portfolio-item" target="_blank" rel="noopener">
+                        <span class="portfolio-icon">📚</span>
+                        <div class="portfolio-info">
+                            <p class="portfolio-name">Mind Beyond Mind</p>
+                            <p class="portfolio-desc">Published Book on Amazon</p>
+                        </div>
+                    </a>
+                    <a href="https://open.spotify.com/album/2zur5WUpxMZ7zHux9X8Clq" class="portfolio-item" target="_blank" rel="noopener">
+                        <span class="portfolio-icon">🎸</span>
+                        <div class="portfolio-info">
+                            <p class="portfolio-name">Xtreme Intent</p>
+                            <p class="portfolio-desc">X3 Album on Spotify</p>
+                        </div>
+                    </a>
+                    <a href="https://kaggle.com/dubltap" class="portfolio-item" target="_blank" rel="noopener">
+                        <span class="portfolio-icon">📊</span>
+                        <div class="portfolio-info">
+                            <p class="portfolio-name">Kaggle</p>
+                            <p class="portfolio-desc">Data Science & ML</p>
+                        </div>
+                    </a>
+                    <a href="https://hackerone.com/dubltap" class="portfolio-item" target="_blank" rel="noopener">
+                        <span class="portfolio-icon">🔐</span>
+                        <div class="portfolio-info">
+                            <p class="portfolio-name">HackerOne</p>
+                            <p class="portfolio-desc">Security Research</p>
+                        </div>
+                    </a>
+                    <a href="https://promptbase.com/profile/dubltap" class="portfolio-item" target="_blank" rel="noopener">
+                        <span class="portfolio-icon">⚡</span>
+                        <div class="portfolio-info">
+                            <p class="portfolio-name">PromptBase</p>
+                            <p class="portfolio-desc">Production Prompts</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Credentials -->
+        <section>
+            <div class="container">
+                <p class="section-label">Credentials</p>
+                <h2>Certifications & Background</h2>
+                
+                <div class="credentials-list">
+                    <div class="credential">
+                        <span class="credential-badge"></span>
+                        <span>CBNT — Certified Broadcast Networking Technologist (19-year SBE Member)</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-badge"></span>
+                        <span>AES — Audio Engineering Society Professional Member</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-badge"></span>
+                        <span>Microsoft Azure AI Fundamentals & Power Platform Fundamentals</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-badge"></span>
+                        <span>Siemens (FA/SCADA/TIA/AI) • Schneider (FA) • Rockwell Certifications</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-badge"></span>
+                        <span>USAF Air Command and Staff College</span>
+                    </div>
+                    <div class="credential">
+                        <span class="credential-badge"></span>
+                        <span>Series 33 • Series 3 • Insurance Producer License</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-quote">"The best AI engineers aren't the ones who learned AI. They're the ones who learned systems—then applied them to AI."</p>
+            <a href="mailto:chris.a.grove@gmail.com" class="cta-btn">Get in Touch</a>
+            <p style="margin-top: 32px; font-size: 13px; color: var(--gray-dark);">Seattle–Tacoma, WA • © 2025 Christopher Grove</p>
+        </div>
+    </footer>
+</body>
+</html>
