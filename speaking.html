@@ -1,68 +1,106 @@
-<img src="assets/CG2.png"/>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <div class="brandbar">
-  <a class="brand" href="index.html" aria-label="Home">
-    <img src="assets/cg-logo.jpg" alt="dub L tap logo" />
-    <span class="brandname">dub L tap</span>
-  </a>
-</div>
   <title>The Reinvention Operating System | Keynote Speaker</title>
   <meta name="description" content="Keynote + workshop: The Reinvention Operating System. Reinvent under pressure. Execute with clarity. Perform without burnout." />
   <style>
-   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; margin: 0; color: #111; }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 32px 18px 60px; }
-    .kicker { letter-spacing: .08em; text-transform: uppercase; font-size: 12px; color: #444; }
-    h1 { font-size: 42px; line-height: 1.1; margin: 10px 0 12px; }
-    .sub { font-size: 18px; color: #333; max-width: 68ch; }
-    .ctaRow { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 8px; }
-    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; text-decoration: none; font-weight: 600; border: 1px solid #111; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; margin: 0; color: #111; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 28px 18px 60px; }
+
+    /* Brand bar (logo + name) */
+    .brandbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 18px; }
+    .brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:#111; }
+    .brand-logo { height:44px; width:auto; border-radius:12px; display:block; }
+    .brandname { font-weight:900; letter-spacing: .02em; }
+    .brandtag { font-size:12px; color:#555; }
+
+    /* Hero layout (portrait + title) */
+    .hero { display:grid; grid-template-columns: 112px 1fr; gap:16px; align-items:center; }
+    .portrait {
+      width:112px; height:112px; object-fit:cover;
+      border-radius: 20px;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      background:#fff;
+    }
+    @media (min-width: 760px) {
+      .hero { grid-template-columns: 140px 1fr; }
+      .portrait { width:140px; height:140px; border-radius: 22px; }
+    }
+
+    .kicker { letter-spacing: .08em; text-transform: uppercase; font-size: 12px; color: #444; margin-bottom: 6px; }
+    h1 { font-size: 44px; line-height: 1.08; margin: 6px 0 10px; }
+    .sub { font-size: 18px; color: #333; max-width: 72ch; margin: 0; }
+
+    /* CTAs */
+    .ctaRow { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 10px; }
+    .btn { display: inline-flex; align-items:center; gap:8px; padding: 12px 16px; border-radius: 9999px; text-decoration: none; font-weight: 800; border: 1px solid #111; }
     .btn.primary { background: #111; color: #fff; }
     .btn.ghost { background: #fff; color: #111; }
+    .btn:hover { transform: translateY(-1px); }
     .note { font-size: 13px; color: #555; margin-top: 6px; }
+
     hr { border: 0; border-top: 1px solid #e6e6e6; margin: 26px 0; }
     h2 { font-size: 22px; margin: 0 0 10px; }
-    ul { padding-left: 18px; }
+    ul { padding-left: 18px; margin: 0; }
     li { margin: 8px 0; }
-    .box { background: #fafafa; border: 1px solid #e8e8e8; border-radius: 14px; padding: 16px; }
+
+    .box { background: #fafafa; border: 1px solid #e8e8e8; border-radius: 16px; padding: 16px; }
     .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
     @media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
+
     .footer { margin-top: 30px; font-size: 14px; color: #555; }
     .tiny { font-size: 12px; color: #666; }
     a { color: inherit; }
-     .brandbar { display:flex; align-items:center; justify-content:space-between; margin-bottom: 14px; }
-.brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; }
-.brand img { height:46px; width:auto; border-radius:12px; }
-.brandname { font-weight:800; letter-spacing: .02em; }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <div class="kicker">Keynote + Workshop</div>
-    <h1>The Reinvention Operating System</h1>
-    <p class="sub">
-      A practical, high-energy framework that helps leaders and revenue teams reset under pressure, regain clarity, and execute with a 90-day rhythm that actually sticks.
-    </p>
 
-    <div class="ctaRow">
-      <a class="btn primary" href="https://calendly.com/dubltap66/30min" target="_blank" rel="noopener">
-        Request Availability (Book a Call)
+    <!-- Brand logo (top-left) -->
+    <div class="brandbar">
+      <a class="brand" href="index.html" aria-label="Back to resume">
+        <!-- CHANGE THIS to match your actual branded logo filename -->
+        <img class="brand-logo" src="assets/cg-logo.jpg" alt="dub L tap brand logo" />
+        <div>
+          <div class="brandname">dub L tap</div>
+          <div class="brandtag">Keynote + Workshop</div>
+        </div>
       </a>
 
-      <a class="btn ghost" href="onesheet.html" target="_blank" rel="noopener">
-        Download One-Sheet — The Reinvention Operating System (PDF)
-      </a>
-
-      <a class="btn ghost" href="index.html">
-        Back to Resume
-      </a>
+      <div class="brandtag">Reinvention OS</div>
     </div>
 
-    <div class="note">
-      Fast reply. Simple booking. Built for real-world teams (not hype).
+    <!-- Hero with portrait + headline -->
+    <div class="hero">
+      <img class="portrait" src="assets/CG2.png" alt="Christopher Grove portrait" />
+
+      <div>
+        <div class="kicker">The Flagship Keynote</div>
+        <h1>The Reinvention Operating System</h1>
+        <p class="sub">
+          A practical, high-energy framework that helps leaders and revenue teams reset under pressure, regain clarity, and execute with a 90-day rhythm that actually sticks.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="https://calendly.com/dubltap66/30min" target="_blank" rel="noopener">
+            Request Availability (Book a Call)
+          </a>
+
+          <a class="btn ghost" href="onesheet.html" target="_blank" rel="noopener">
+            One-Sheet (PDF)
+          </a>
+
+          <a class="btn ghost" href="index.html">
+            Resume
+          </a>
+        </div>
+
+        <div class="note">Fast reply. Simple booking. Built for real-world teams (not hype).</div>
+      </div>
     </div>
 
     <hr>
@@ -92,7 +130,7 @@
     <hr>
 
     <div class="box">
-      <h2>The talk arc (simple and actionable)</h2>
+      <h2>The talk arc</h2>
       <ul>
         <li><strong>Reset</strong>: interrupt the spiral and get present</li>
         <li><strong>Reframe</strong>: turn adversity into a playable plan</li>
@@ -100,8 +138,8 @@
         <li><strong>Identity shift</strong>: from “worker” to “builder”</li>
         <li><strong>90-day run</strong>: execution plan your team can actually follow</li>
       </ul>
-      <p class="tiny">
-        Note: content can be tailored for Sales/Partner performance or broader leadership reinvention.
+      <p class="tiny" style="margin-top:10px;">
+        Can be tailored for Sales/Partner performance or broader leadership reinvention.
       </p>
     </div>
 
@@ -131,8 +169,9 @@
 
     <div class="footer">
       <strong>Contact:</strong>
-      <span class="tiny">You can add your email here later if you want.</span>
+      <span class="tiny">Optional: add email later.</span>
     </div>
+
   </div>
 </body>
 </html>
