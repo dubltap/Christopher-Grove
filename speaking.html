@@ -1,293 +1,1274 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Reinvention Operating System | Keynote Speaker</title>
-  <meta name="description" content="Keynote + workshop: The Reinvention Operating System. Reinvent under pressure. Execute with clarity. Perform without burnout." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reinvention Operating System | Christopher Grove — Keynote Speaker</title>
+    <meta name="description" content="A keynote for leaders navigating pressure, technology transformation, and the demand to perform. Grounded in metacognition. Refined over four decades. Book Christopher Grove.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0a0a0b;
+            --color-bg-elevated: #141416;
+            --color-bg-subtle: #1a1a1f;
+            --color-text: #e8e8ed;
+            --color-text-muted: #9898a3;
+            --color-accent: #6b8afd;
+            --color-accent-hover: #8aa3ff;
+            --color-accent-subtle: rgba(107, 138, 253, 0.12);
+            --color-accent-warm: #f59e0b;
+            --color-accent-warm-subtle: rgba(245, 158, 11, 0.12);
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-border-hover: rgba(255, 255, 255, 0.15);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.5;
-      margin: 0;
-      color: #111;
-      background: #fff;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .wrap {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 28px 18px 60px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* Top brand bar */
-    .brandbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #111;
-    }
-    .brand-logo {
-      height: 44px;
-      width: auto;
-      border-radius: 12px;
-      display: block;
-      border: 1px solid #e8e8e8;
-      background: #fff;
-    }
-    .brandname {
-      font-weight: 900;
-      letter-spacing: .02em;
-    }
-    .brandtag {
-      font-size: 12px;
-      color: #555;
-    }
+        body {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 112px 1fr;
-      gap: 16px;
-      align-items: center;
-      margin-top: 6px;
-    }
-    .portrait {
-      width: 112px;
-      height: 112px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 1px solid #e8e8e8;
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
-      background: #fff;
-    }
-    @media (min-width: 760px) {
-      .hero { grid-template-columns: 140px 1fr; }
-      .portrait { width: 140px; height: 140px; border-radius: 22px; }
-    }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+        }
 
-    .kicker {
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: #444;
-      margin-bottom: 6px;
-    }
-    h1 {
-      font-size: 44px;
-      line-height: 1.08;
-      margin: 6px 0 10px;
-    }
-    .sub {
-      font-size: 18px;
-      color: #333;
-      max-width: 72ch;
-      margin: 0;
-    }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* CTA buttons (radial/pill) */
-    .ctaRow {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 18px 0 10px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 800;
-      border: 1px solid #111;
-      transition: transform .08s ease, background .15s ease, color .15s ease;
-      user-select: none;
-    }
-    .btn.primary {
-      background: #111;
-      color: #fff;
-    }
-    .btn.ghost {
-      background: #fff;
-      color: #111;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn.ghost:hover { background: #111; color: #fff; }
-    .btn.primary:hover { background: #000; }
+        .nav-brand {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
 
-    .note {
-      font-size: 13px;
-      color: #555;
-      margin-top: 6px;
-    }
+        .nav-brand span {
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
 
-    hr {
-      border: 0;
-      border-top: 1px solid #e6e6e6;
-      margin: 26px 0;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 760px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
+        .nav-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-    .box {
-      background: #fafafa;
-      border: 1px solid #e8e8e8;
-      border-radius: 16px;
-      padding: 16px;
-    }
-    h2 {
-      font-size: 22px;
-      margin: 0 0 10px;
-    }
-    ul { padding-left: 18px; margin: 0; }
-    li { margin: 8px 0; }
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
 
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #555;
-    }
-    .tiny { font-size: 12px; color: #666; }
-    a { color: inherit; }
-  </style>
+        .nav-cta {
+            background: var(--color-accent);
+            color: #fff !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(107, 138, 253, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--color-accent-subtle);
+            border-radius: 100px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.75rem, 6vw, 4.25rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--color-text-muted);
+            max-width: 750px;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-subtext {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(107, 138, 253, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-border-hover);
+            background: var(--color-bg-elevated);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .problem-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .problem-text p:first-of-type {
+            color: var(--color-text);
+            font-size: 1.2rem;
+        }
+
+        .problem-visual {
+            padding: 2.5rem;
+            background: var(--color-bg);
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
+        }
+
+        .problem-visual blockquote {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--color-text);
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-accent);
+        }
+
+        /* Differentiator Section */
+        .differentiator {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .differentiator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -20%;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translateY(-50%);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .diff-card {
+            padding: 2.5rem;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            position: relative;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .diff-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-4px);
+        }
+
+        .diff-card.featured {
+            border-color: var(--color-accent);
+            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, rgba(107, 138, 253, 0.05) 100%);
+        }
+
+        .diff-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .diff-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .diff-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Pillars Section */
+        .pillars {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .pillars-intro {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        .pillars-intro p {
+            font-size: 1.15rem;
+            color: var(--color-text);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .pillar-card {
+            padding: 2rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--color-accent-subtle);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Outcomes Section */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .outcome-card {
+            padding: 2rem;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .outcome-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-3px);
+        }
+
+        .outcome-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent-subtle);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .outcome-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .outcome-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Talk Arc Section */
+        .arc {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .arc-timeline {
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .arc-timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-subtle));
+        }
+
+        .arc-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .arc-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .arc-marker {
+            width: 50px;
+            height: 50px;
+            background: var(--color-bg);
+            border: 2px solid var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .arc-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
+            color: var(--color-text);
+        }
+
+        .arc-content p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Why Now Section */
+        .why-now-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .why-now-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .why-now-point {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+        }
+
+        .why-now-point-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-accent-subtle);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .why-now-point p {
+            margin-bottom: 0;
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        .why-now-insight {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, rgba(107, 138, 253, 0.08) 100%);
+            border: 1px solid var(--color-accent);
+            border-radius: 16px;
+        }
+
+        .why-now-insight p {
+            font-size: 1.15rem;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .why-now-insight p:last-child {
+            margin-bottom: 0;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--color-accent);
+            font-size: 1.25rem;
+        }
+
+        /* Formats Section */
+        .formats {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .format-card {
+            padding: 2rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .format-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        .format-duration {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .format-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .format-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Audiences Section */
+        .audiences-list {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .audience-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            transition: border-color 0.2s;
+        }
+
+        .audience-item:hover {
+            border-color: var(--color-border-hover);
+        }
+
+        .audience-item::before {
+            content: '✓';
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        /* Throughline Section */
+        .throughline {
+            background: var(--color-bg-elevated);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .throughline-content {
+            max-width: 750px;
+        }
+
+        .throughline-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .throughline-content p.highlight {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--color-accent);
+            margin-top: 2rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .throughline-arc {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+        }
+
+        .throughline-arc h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .arc-flow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .arc-flow-item {
+            padding: 0.5rem 1rem;
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        .arc-flow-arrow {
+            color: var(--color-accent);
+            font-size: 1.1rem;
+        }
+
+        /* Booking Section */
+        .booking {
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .booking h2 {
+            margin-bottom: 1rem;
+        }
+
+        .booking > p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .booking-steps {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .booking-step {
+            text-align: center;
+        }
+
+        .booking-step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--color-accent-subtle);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin: 0 auto 1rem;
+            font-size: 1.1rem;
+        }
+
+        .booking-step h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .booking-step p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .footer-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-title {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-location {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer-copyright {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .problem-grid,
+            .diff-grid,
+            .why-now-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pillars-grid,
+            .formats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audiences-list {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 4rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .arc-item {
+                gap: 1.25rem;
+            }
+
+            .arc-marker {
+                width: 40px;
+                height: 40px;
+                font-size: 0.8rem;
+            }
+
+            .arc-timeline::before {
+                left: 19px;
+            }
+
+            .arc-flow {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .arc-flow-arrow {
+                transform: rotate(90deg);
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <div class="ctaRow">
-  <a class="btn ghost" href="mailto:dubltap66@gmail.com">Email</a>
-  <a class="btn ghost" href="tel:+13608744712">Call</a>
-</div>
 
-    <!-- Brand (logo + name) -->
-    <div class="brandbar">
-      <a class="brand" href="index.html" aria-label="Back to resume">
-        <img class="brand-logo" src="assets/CGlogo.jpg" alt="dub L tap brand logo" />
-        <div>
-          <div class="brandname">dub L tap</div>
-          <div class="brandtag">Keynote + Workshop</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">Christopher Grove <span>/ Convergence Architect</span></a>
+            <div class="nav-links">
+                <a href="/">About</a>
+                <a href="/onesheet">One-Sheet</a>
+                <a href="https://calendly.com/dubltap66/30min" class="nav-cta">Book a Call</a>
+            </div>
         </div>
-      </a>
-      <div class="brandtag">Reinvention OS</div>
-    </div>
+    </nav>
 
-    <!-- Hero (portrait + headline) -->
-    <div class="hero">
-      <img class="portrait" src="assets/CG2.png" alt="Christopher Grove portrait" />
-
-      <div>
-        <div class="kicker">The Flagship Keynote</div>
-        <h1>The Reinvention Operating System</h1>
-        <p class="sub">
-          A practical, high-energy framework that helps leaders and revenue teams reset under pressure, regain clarity, and execute with a 90-day rhythm that actually sticks.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn primary" href="https://calendly.com/dubltap66/30min" target="_blank" rel="noopener">
-            Request Availability (Book a Call)
-          </a>
-
-          <a class="btn ghost" href="onesheet.html" target="_blank" rel="noopener">
-            One-Sheet (PDF)
-          </a>
-
-          <a class="btn ghost" href="index.html">
-            Resume
-          </a>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <span class="hero-label">Flagship Keynote</span>
+            <h1>The Reinvention Operating System</h1>
+            <p class="hero-subtitle">A keynote for leaders navigating pressure, technology transformation, and the demand to perform — without burning out or leaving their teams behind.</p>
+            <p class="hero-subtext">Grounded in metacognition. Refined across four decades. Built for the AI era.</p>
+            <div class="hero-ctas">
+                <a href="https://calendly.com/dubltap66/30min" class="btn btn-primary">
+                    Request Availability
+                </a>
+                <a href="/onesheet" class="btn btn-secondary">
+                    Download One-Sheet
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="note">Fast reply. Simple booking. Built for real-world teams (not hype).</div>
-      </div>
-    </div>
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="section-inner">
+            <div class="problem-grid">
+                <div class="problem-text">
+                    <span class="section-label">The Problem Worth Naming</span>
+                    <h2>Every leader knows the feeling.</h2>
+                    <p>The pressure is constant. The complexity keeps compounding. Technology is shifting faster than teams can adapt. And somewhere between "strategic priorities" and "urgent fires," clarity disappears.</p>
+                    <p>Most advice says work harder, stay positive, or embrace the chaos.</p>
+                    <p>That's not a system. That's a slogan.</p>
+                </div>
+                <div class="problem-visual">
+                    <blockquote>
+                        "The Reinvention Operating System is different. It's a framework — grounded in metacognition and refined across four decades — that helps leaders reset under pressure, embrace technology as a multiplier, and execute with a rhythm that actually sticks."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <hr>
+    <!-- Differentiator Section -->
+    <section class="differentiator">
+        <div class="section-inner">
+            <span class="section-label">What Makes This Different</span>
+            <h2>This system works because it's been lived.</h2>
+            <p style="max-width: 700px; font-size: 1.1rem;">Not theorized from a textbook. Not borrowed from a bestseller. Employed, developed, and refined across a career spanning recording studios, factory floors, enterprise platforms, and AI agents.</p>
+            
+            <div class="diff-grid">
+                <div class="diff-card featured">
+                    <div class="diff-label">The Foundation</div>
+                    <h3>Metacognitive Approach</h3>
+                    <p>The practice of thinking about how we think — applied across technical, athletic, and creative disciplines. It sharpens decision-making, builds clearer perception of successful outcomes, and helps teams work as a collective rather than a collection of individuals.</p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-label">The Lens</div>
+                    <h3>Technology Evangelism</h3>
+                    <p>Four decades building systems creates a lens most speakers can't offer. AI and emerging technology become opportunities to elevate teams and customers — not threats to manage or resist.</p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-label">The Bridge</div>
+                    <h3>Change Enablement</h3>
+                    <p>Transformation fails when people feel managed instead of helped. This framework guides adoption by meeting teams where they are and building trust through demonstrated value — not mandates.</p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-label">The Proof</div>
+                    <h3>Operational Credibility</h3>
+                    <p>From keynotes and user groups to enterprise-scale programs — this methodology has been tested under real pressure with real teams delivering real outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="grid">
-      <div class="box">
-        <h2>What audiences leave with</h2>
-        <ul>
-          <li>A repeatable <strong>reset protocol</strong> for pressure and uncertainty</li>
-          <li>The Reinvention OS: <strong>Priorities → Rituals → Scoreboard</strong></li>
-          <li>A clear <strong>90-day execution rhythm</strong> (what ships, what stops)</li>
-          <li>Tools to perform with clarity — <strong>without burnout</strong></li>
-        </ul>
-      </div>
+    <!-- Three Pillars Section -->
+    <section class="pillars">
+        <div class="section-inner">
+            <span class="section-label">The Three Pillars</span>
+            <h2>Mindset. Technology. Execution.</h2>
+            <div class="pillars-intro">
+                <p>Most keynotes address one of these. This one integrates all three — because sustainable performance requires the complete system.</p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">◎</div>
+                    <h3>Mindset Reset</h3>
+                    <p>Interrupt the spiral. Sharpen awareness. Perform under pressure by observing how you think — not just what you think.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">⚡</div>
+                    <h3>Technology as Multiplier</h3>
+                    <p>See AI and emerging tech as tools that elevate human capability. Build the mindset for adoption that creates competitive advantage.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">↗</div>
+                    <h3>Collective Execution</h3>
+                    <p>Align teams on outcomes — not just tasks. Execute with a 90-day rhythm that creates accountability, momentum, and sustainable performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="box">
-        <h2>Who it’s for</h2>
-        <ul>
-          <li>Sales &amp; go-to-market teams</li>
-          <li>Partner / channel organizations</li>
-          <li>Leadership offsites</li>
-          <li>Enablement &amp; L&amp;D programming</li>
-        </ul>
-      </div>
-    </div>
+    <!-- Outcomes Section -->
+    <section class="outcomes">
+        <div class="section-inner">
+            <span class="section-label">What Audiences Leave With</span>
+            <h2>Practical tools. Immediate clarity.</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <div class="outcome-icon">⟳</div>
+                    <h3>Reset Protocol</h3>
+                    <p>A repeatable method for interrupting spirals and regaining presence under pressure.</p>
+                </div>
+                <div class="outcome-card">
+                    <div class="outcome-icon">◎</div>
+                    <h3>The Operating System</h3>
+                    <p>Priorities → Rituals → Scoreboard. A structure that creates clarity without rigidity.</p>
+                </div>
+                <div class="outcome-card">
+                    <div class="outcome-icon">↗</div>
+                    <h3>90-Day Rhythm</h3>
+                    <p>A clear execution cadence — what ships, what stops, what waits.</p>
+                </div>
+                <div class="outcome-card">
+                    <div class="outcome-icon">◇</div>
+                    <h3>Metacognitive Edge</h3>
+                    <p>Tools for observing your own decision-making and improving it in real time.</p>
+                </div>
+                <div class="outcome-card">
+                    <div class="outcome-icon">⚡</div>
+                    <h3>Technology Adoption Lens</h3>
+                    <p>A framework for embracing AI as opportunity — and helping your team do the same.</p>
+                </div>
+                <div class="outcome-card">
+                    <div class="outcome-icon">☰</div>
+                    <h3>Collective Alignment</h3>
+                    <p>Move from a collection of individuals to a team executing as one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <hr>
+    <!-- Talk Arc Section -->
+    <section class="arc">
+        <div class="section-inner">
+            <span class="section-label">The Talk Arc</span>
+            <h2>Five movements. One transformation.</h2>
+            <div class="arc-timeline">
+                <div class="arc-item">
+                    <div class="arc-marker">01</div>
+                    <div class="arc-content">
+                        <h3>Reset</h3>
+                        <p>Interrupt the spiral. Get present. Create space for clear thinking through metacognitive awareness.</p>
+                    </div>
+                </div>
+                <div class="arc-item">
+                    <div class="arc-marker">02</div>
+                    <div class="arc-content">
+                        <h3>Reframe</h3>
+                        <p>Turn adversity into a playable plan. See technology as opportunity. Shift from reactive to responsive.</p>
+                    </div>
+                </div>
+                <div class="arc-item">
+                    <div class="arc-marker">03</div>
+                    <div class="arc-content">
+                        <h3>System</h3>
+                        <p>Build the operating rhythm — priorities, rituals, scoreboard. Create structure that absorbs chaos.</p>
+                    </div>
+                </div>
+                <div class="arc-item">
+                    <div class="arc-marker">04</div>
+                    <div class="arc-content">
+                        <h3>Identity Shift</h3>
+                        <p>Move from "worker" to "builder." From individual contributor to collective architect. Own the transformation.</p>
+                    </div>
+                </div>
+                <div class="arc-item">
+                    <div class="arc-marker">05</div>
+                    <div class="arc-content">
+                        <h3>90-Day Run</h3>
+                        <p>Leave with an execution plan the team can actually follow — and the mindset to adapt when conditions change.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2.5rem; font-style: italic; color: var(--color-text-muted);">
+                Tailored for sales/GTM performance, technology adoption initiatives, leadership offsites, or broader organizational reinvention.
+            </p>
+        </div>
+    </section>
 
-    <div class="box">
-      <h2>The talk arc</h2>
-      <ul>
-        <li><strong>Reset</strong>: interrupt the spiral and get present</li>
-        <li><strong>Reframe</strong>: turn adversity into a playable plan</li>
-        <li><strong>System</strong>: priorities, rituals, scoreboard</li>
-        <li><strong>Identity shift</strong>: from “worker” to “builder”</li>
-        <li><strong>90-day run</strong>: execution plan your team can actually follow</li>
-      </ul>
-      <p class="tiny" style="margin-top:10px;">
-        Can be tailored for Sales/Partner performance or broader leadership reinvention.
-      </p>
-    </div>
+    <!-- Why Now Section -->
+    <section class="why-now">
+        <div class="section-inner">
+            <span class="section-label">Why This. Why Now.</span>
+            <h2>The context has changed.</h2>
+            
+            <div class="why-now-grid">
+                <div class="why-now-points">
+                    <div class="why-now-point">
+                        <div class="why-now-point-icon">⚡</div>
+                        <p><strong>AI is shifting from novelty to necessity.</strong> Leaders need frameworks for adoption that create excitement, not resistance.</p>
+                    </div>
+                    <div class="why-now-point">
+                        <div class="why-now-point-icon">◎</div>
+                        <p><strong>Complexity has outpaced bandwidth.</strong> Teams are doing more with less — and the cognitive load is showing.</p>
+                    </div>
+                    <div class="why-now-point">
+                        <div class="why-now-point-icon">↗</div>
+                        <p><strong>Resilience is now competitive advantage.</strong> The teams that reset quickly and execute clearly are pulling ahead.</p>
+                    </div>
+                </div>
+                
+                <div class="why-now-insight">
+                    <p>The leaders who thrive won't be the ones who resist the change or simply endure it.</p>
+                    <p>They'll be the ones who build systems — mental, operational, technological — that let them think clearly under pressure and bring their teams along for the transformation.</p>
+                    <p>"That's what this keynote is built for."</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <hr>
+    <!-- Formats Section -->
+    <section class="formats">
+        <div class="section-inner">
+            <span class="section-label">Formats</span>
+            <h2>Flexible delivery. Maximum impact.</h2>
+            <div class="formats-grid">
+                <div class="format-card">
+                    <div class="format-duration">45–60<span style="font-size: 1rem; font-weight: 400;"> min</span></div>
+                    <h3>Keynote</h3>
+                    <p>Conferences, all-hands meetings, sales kickoffs, leadership summits.</p>
+                </div>
+                <div class="format-card">
+                    <div class="format-duration">60–75<span style="font-size: 1rem; font-weight: 400;"> min</span></div>
+                    <h3>Keynote + Q&A</h3>
+                    <p>Leadership offsites, executive retreats, CEO peer groups.</p>
+                </div>
+                <div class="format-card">
+                    <div class="format-duration">90–180<span style="font-size: 1rem; font-weight: 400;"> min</span></div>
+                    <h3>Workshop Sprint</h3>
+                    <p>Enablement sessions, team intensives, hands-on application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="grid">
-      <div class="box">
-        <h2>Formats</h2>
-        <ul>
-          <li>Keynote (45–60 min)</li>
-          <li>Keynote + Q&amp;A (60–75 min)</li>
-          <li>Workshop: Reinvention OS Sprint (90–180 min)</li>
-        </ul>
-      </div>
+    <!-- Audiences Section -->
+    <section class="audiences">
+        <div class="section-inner">
+            <span class="section-label">Who Books This</span>
+            <h2>Built for leaders navigating transformation.</h2>
+            <div class="audiences-list">
+                <div class="audience-item">Sales & go-to-market teams under pressure</div>
+                <div class="audience-item">Organizations adopting AI and emerging tech</div>
+                <div class="audience-item">Partner and channel teams navigating change</div>
+                <div class="audience-item">Leadership offsites seeking clarity and alignment</div>
+                <div class="audience-item">L&D and enablement building execution culture</div>
+                <div class="audience-item">Vistage and CEO peer groups exploring reinvention</div>
+            </div>
+        </div>
+    </section>
 
-      <div class="box">
-        <h2>About</h2>
-        <p>
-          I’m an enterprise revenue and partner leader and a seasoned keynote speaker with deep experience training and motivating high-performing teams.
-          I blend boardroom execution with athlete-level discipline to deliver a message that’s inspiring <em>and</em> operational.
+    <!-- Throughline Section -->
+    <section class="throughline">
+        <div class="section-inner">
+            <div class="throughline-content">
+                <span class="section-label">The Throughline</span>
+                <h2>Where this comes from.</h2>
+                <p>Forty years building systems — recording studios, factory floors, enterprise platforms, AI agents — revealed a consistent truth:</p>
+                <p class="highlight">The technology is never the hard part. Helping humans trust it, use it, and improve with it — that's the hard part.</p>
+                <p style="margin-top: 2rem;">Every domain required the same discipline: metacognition — the practice of thinking about how we think. Applied to technical work. Refined through athletic training. Expressed in creative production. Proven at enterprise scale.</p>
+                <p>This keynote is the distillation of that work: a practical operating system for leaders who need to perform under pressure, embrace emerging technology, and bring their teams along for the transformation.</p>
+                
+                <div class="throughline-arc">
+                    <h4>The 40-Year Arc</h4>
+                    <div class="arc-flow">
+                        <span class="arc-flow-item">Recording Studios</span>
+                        <span class="arc-flow-arrow">→</span>
+                        <span class="arc-flow-item">Factory Floors</span>
+                        <span class="arc-flow-arrow">→</span>
+                        <span class="arc-flow-item">Enterprise Platforms</span>
+                        <span class="arc-flow-arrow">→</span>
+                        <span class="arc-flow-item">AI Agents</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking">
+        <div class="section-inner">
+            <span class="section-label">Get Started</span>
+            <h2>Booking is simple.</h2>
+            <p>Fast replies. Clear logistics. No friction.</p>
+            <div class="booking-steps">
+                <div class="booking-step">
+                    <div class="booking-step-number">1</div>
+                    <h4>Request Availability</h4>
+                    <p>Book a 30-minute call</p>
+                </div>
+                <div class="booking-step">
+                    <div class="booking-step-number">2</div>
+                    <h4>Align on Outcome</h4>
+                    <p>Tailor the talk to your context</p>
+                </div>
+                <div class="booking-step">
+                    <div class="booking-step-number">3</div>
+                    <h4>Confirm & Deliver</h4>
+                    <p>Lock in the date and show up</p>
+                </div>
+            </div>
+            <a href="https://calendly.com/dubltap66/30min" class="btn btn-primary">
+                Request Availability
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-name">Christopher Grove</div>
+        <div class="footer-title">Convergence Architect · Keynote Speaker · Technology Evangelist</div>
+        <div class="footer-links">
+            <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>
+            <a href="mailto:chris.a.grove@gmail.com">Email</a>
+            <a href="tel:+13608744712">(360) 874-4712</a>
+        </div>
+        <div class="footer-location">Seattle–Tacoma, WA</div>
+        <p class="footer-quote">
+            "The best systems don't add cognitive load. They absorb it — so people can think clearly when it matters most. That's true for technology. That's true for teams. That's the operating system."
         </p>
-        <p class="tiny">
-          Booking is simple: request availability → align on audience outcome → confirm.
-        </p>
-      </div>
-    </div>
-   <div class="footer">
-  <strong>Contact:</strong>
-  <span class="tiny">
-    <a href="mailto:dubltap66@gmail.com">dubltap66@gmail.com</a>
-    &nbsp;•&nbsp;
-    <a href="tel:+13608744712">(360) 874-4712</a>
-  </span>
-</div>
-  </div>
+        <div class="footer-copyright">© 2025 Christopher Grove. All rights reserved.</div>
+    </footer>
+
 </body>
 </html>
