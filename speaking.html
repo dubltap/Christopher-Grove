@@ -1,358 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christopher Grove | Speaking &amp; Advisory</title>
-  <meta name="description" content="Christopher Grove — Speaking and advisory on technology adoption, enterprise sales, and bridging legacy systems with AI. Keynotes, panels, and workshops.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://christopher-grove.com/speaking.html">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Christopher Grove | Speaking &amp; Advisory</title>
+    <meta name="description" content="Christopher Grove — Speaking and advisory on technology adoption, enterprise sales, and bridging legacy systems with AI. Keynotes, panels, and workshops.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://christopher-grove.com/speaking.html">
+  
+    <!-- Open Graph -->
+    <meta property="og:title" content="Christopher Grove | Speaking & Advisory">
+    <meta property="og:description" content="Speaking and advisory on technology adoption, enterprise sales, and bridging legacy systems with AI.">
+    <meta property="og:url" content="https://christopher-grove.com/speaking.html">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="https://raw.githubusercontent.com/dubltap/Christopher-Grove/main/assets/christopher-grove-headshot.jpg">
+    <meta property="og:image:alt" content="Christopher Grove — Speaking and advisory professional headshot">
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Christopher Grove | Speaking & Advisory">
+    <meta name="twitter:description" content="Speaking and advisory on technology adoption, enterprise sales, and bridging legacy systems with AI.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/dubltap/Christopher-Grove/main/assets/christopher-grove-headshot.jpg">
+    <meta name="twitter:image:alt" content="Christopher Grove — Speaking and advisory professional headshot">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
+    <style>
+          :root {
+                  --navy: #1a2a3a;
+                  --navy-light: #2e4a62;
+                  --slate: #475569;
+                  --steel: #64748b;
+                  --stone: #94a3b8;
+                  --cream: #f8f6f3;
+                  --warm-white: #fefdfb;
+                  --accent: #2e5a88;
+                  --rule: #d4d0ca;
+                  --sans: 'DM Sans', -apple-system, sans-serif;
+                  --serif: 'Newsreader', Georgia, serif;
+          }
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          html { scroll-behavior: smooth; }
+          body {
+                  font-family: var(--sans); color: var(--navy);
+                  background: var(--warm-white); line-height: 1.65;
+                  -webkit-font-smoothing: antialiased;
+          }
+          nav {
+                  position: fixed; top: 0; width: 100%; z-index: 100;
+                  background: rgba(254, 253, 251, 0.92);
+                  backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule);
+          }
+          nav .nav-inner {
+                  max-width: 960px; margin: 0 auto; padding: 14px 24px;
+                  display: flex; align-items: center; justify-content: space-between;
+          }
+          nav .nav-name {
+                  font-weight: 700; font-size: 15px; color: var(--navy);
+                  text-decoration: none; letter-spacing: 0.02em;
+          }
+          nav .nav-links { display: flex; gap: 24px; align-items: center; }
+          nav .nav-links a {
+                  font-size: 13px; font-weight: 500; color: var(--steel);
+                  text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s;
+          }
+          nav .nav-links a:hover { color: var(--navy); }
+          nav .nav-links a.cta {
+                  background: var(--navy); color: white; padding: 7px 16px;
+                  border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+          }
+          nav .nav-links a.cta:hover { background: var(--navy-light); }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+          .hero {
+                  max-width: 960px; margin: 0 auto; padding: 140px 24px 80px;
+                  display: flex; align-items: center; gap: 48px;
+          }
+          .hero-content { flex: 1; min-width: 0; }
+          .hero-headshot-wrapper {
+                  flex-shrink: 0; width: 200px; height: 200px; position: relative;
+          }
+          .hero-headshot {
+                  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+                  border-radius: 50%; display: block;
+                  mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+                  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+          }
+          .hero-label {
+                  display: inline-block; font-size: 11px; font-weight: 700;
+                  letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
+                  border: 1px solid var(--accent); padding: 4px 12px; border-radius: 3px; margin-bottom: 24px;
+          }
+          .hero h1 {
+                  font-family: var(--serif); font-size: clamp(32px, 4.5vw, 46px);
+                  font-weight: 500; line-height: 1.2; color: var(--navy); margin-bottom: 16px; max-width: 680px;
+          }
+          .hero p {
+                  font-size: 16px; color: var(--slate); max-width: 600px; line-height: 1.7; margin-bottom: 28px;
+          }
+          .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+          .hero-actions a {
+                  display: inline-block; padding: 10px 22px; font-size: 13px; font-weight: 600;
+                  letter-spacing: 0.03em; text-decoration: none; border-radius: 4px; transition: all 0.2s;
+            }
+          .hero-actions .primary { background: var(--navy); color: white; }
+          .hero-actions .primary:hover { background: var(--navy-light); }
+          .hero-actions .secondary { border: 1px solid var(--rule); color: var(--slate); }
+          .hero-actions .secondary:hover { border-color: var(--navy); color: var(--navy); }
 
-  <style>
-    :root {
-      --navy: #1a2a3a;
-      --navy-light: #2e4a62;
-      --slate: #475569;
-      --steel: #64748b;
-      --stone: #94a3b8;
-      --cream: #f8f6f3;
-      --warm-white: #fefdfb;
-      --accent: #2e5a88;
-      --rule: #d4d0ca;
-      --sans: 'DM Sans', -apple-system, sans-serif;
-      --serif: 'Newsreader', Georgia, serif;
-    }
+          section { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
+          section + section { border-top: 1px solid var(--rule); }
+          .section-label {
+                  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+                  text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+          }
+          section h2 {
+                  font-family: var(--serif); font-size: 28px; font-weight: 500;
+                  color: var(--navy); margin-bottom: 20px;
+          }
+          section p {
+                  font-size: 15px; color: var(--slate); line-height: 1.7;
+                  max-width: 640px; margin-bottom: 16px;
+          }
+          .topics-grid {
+                  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                  gap: 24px; margin-top: 24px;
+          }
+          .topic-card {
+                  padding: 28px; border: 1px solid var(--rule);
+                  border-radius: 6px; transition: border-color 0.2s;
+          }
+          .topic-card:hover { border-color: var(--accent); }
+          .topic-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+          .topic-card p { font-size: 14px; color: var(--slate); line-height: 1.65; max-width: none; margin-bottom: 0; }
+          .topic-card .topic-audience { font-size: 12px; color: var(--stone); margin-top: 12px; font-style: italic; }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+          .formats-list { list-style: none; margin-top: 20px; }
+          .formats-list li {
+                  padding: 16px 0; border-bottom: 1px solid var(--rule);
+                  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;
+          }
+          .formats-list li:last-child { border-bottom: none; }
+          .format-name { font-weight: 700; font-size: 15px; color: var(--navy); }
+          .format-detail { font-size: 13px; color: var(--steel); }
 
-    body {
-      font-family: var(--sans);
-      color: var(--navy);
-      background: var(--warm-white);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
+          .cred-grid {
+                  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 16px; margin-top: 24px;
+          }
+          .cred-item { padding: 20px; background: var(--cream); border-radius: 6px; border: 1px solid var(--rule); }
+          .cred-item .cred-label {
+                  font-size: 12px; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px;
+          }
+          .cred-item .cred-value { font-size: 14px; color: var(--navy); line-height: 1.5; }
 
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(254, 253, 251, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule);
-    }
-    nav .nav-inner {
-      max-width: 960px; margin: 0 auto; padding: 14px 24px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    nav .nav-name {
-      font-weight: 700; font-size: 15px; color: var(--navy);
-      text-decoration: none; letter-spacing: 0.02em;
-    }
-    nav .nav-links { display: flex; gap: 24px; align-items: center; }
-    nav .nav-links a {
-      font-size: 13px; font-weight: 500; color: var(--steel);
-      text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s;
-    }
-    nav .nav-links a:hover { color: var(--navy); }
-    nav .nav-links a.cta {
-      background: var(--navy); color: white; padding: 7px 16px;
-      border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
-    }
-    nav .nav-links a.cta:hover { background: var(--navy-light); }
+          footer {
+                  max-width: 960px; margin: 0 auto; padding: 40px 24px;
+                  border-top: 1px solid var(--rule);
+                  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+          }
+          footer .footer-left { font-size: 13px; color: var(--stone); }
+          footer .footer-links { display: flex; gap: 20px; }
+          footer .footer-links a { font-size: 13px; color: var(--steel); text-decoration: none; }
+          footer .footer-links a:hover { color: var(--navy); }
 
-    .hero {
-      max-width: 960px; margin: 0 auto; padding: 140px 24px 80px;
-    }
-    .hero-label {
-      display: inline-block; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
-      border: 1px solid var(--accent); padding: 4px 12px; border-radius: 3px; margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-family: var(--serif); font-size: clamp(32px, 4.5vw, 46px);
-      font-weight: 500; line-height: 1.2; color: var(--navy);
-      margin-bottom: 16px; max-width: 680px;
-    }
-    .hero p {
-      font-size: 16px; color: var(--slate); max-width: 600px;
-      line-height: 1.7; margin-bottom: 28px;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .hero-actions a {
-      display: inline-block; padding: 10px 22px; font-size: 13px;
-      font-weight: 600; letter-spacing: 0.03em; text-decoration: none;
-      border-radius: 4px; transition: all 0.2s;
-    }
-    .hero-actions .primary { background: var(--navy); color: white; }
-    .hero-actions .primary:hover { background: var(--navy-light); }
-    .hero-actions .secondary { border: 1px solid var(--rule); color: var(--slate); }
-    .hero-actions .secondary:hover { border-color: var(--navy); color: var(--navy); }
-
-    section {
-      max-width: 960px; margin: 0 auto; padding: 60px 24px;
-    }
-    section + section { border-top: 1px solid var(--rule); }
-
-    .section-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
-    }
-    section h2 {
-      font-family: var(--serif); font-size: 28px; font-weight: 500;
-      color: var(--navy); margin-bottom: 20px;
-    }
-    section p {
-      font-size: 15px; color: var(--slate); line-height: 1.7;
-      max-width: 640px; margin-bottom: 16px;
-    }
-
-    .topics-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px; margin-top: 24px;
-    }
-    .topic-card {
-      padding: 28px; border: 1px solid var(--rule); border-radius: 6px;
-      transition: border-color 0.2s;
-    }
-    .topic-card:hover { border-color: var(--accent); }
-    .topic-card h3 {
-      font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px;
-    }
-    .topic-card p {
-      font-size: 14px; color: var(--slate); line-height: 1.65; max-width: none; margin-bottom: 0;
-    }
-    .topic-card .topic-audience {
-      font-size: 12px; color: var(--stone); margin-top: 12px;
-      font-style: italic;
-    }
-
-    .formats-list {
-      list-style: none; margin-top: 20px;
-    }
-    .formats-list li {
-      padding: 16px 0; border-bottom: 1px solid var(--rule);
-      display: flex; justify-content: space-between; align-items: baseline;
-      flex-wrap: wrap; gap: 8px;
-    }
-    .formats-list li:last-child { border-bottom: none; }
-    .format-name { font-weight: 700; font-size: 15px; color: var(--navy); }
-    .format-detail { font-size: 13px; color: var(--steel); }
-
-    .cred-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px; margin-top: 24px;
-    }
-    .cred-item {
-      padding: 20px; background: var(--cream); border-radius: 6px;
-      border: 1px solid var(--rule);
-    }
-    .cred-item .cred-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px;
-    }
-    .cred-item .cred-value {
-      font-size: 14px; color: var(--navy); line-height: 1.5;
-    }
-
-    footer {
-      max-width: 960px; margin: 0 auto; padding: 40px 24px;
-      border-top: 1px solid var(--rule);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-    }
-    footer .footer-left { font-size: 13px; color: var(--stone); }
-    footer .footer-links { display: flex; gap: 20px; }
-    footer .footer-links a {
-      font-size: 13px; color: var(--steel); text-decoration: none;
-    }
-    footer .footer-links a:hover { color: var(--navy); }
-
-    @media (max-width: 640px) {
-      .hero { padding: 120px 20px 60px; }
-      section { padding: 40px 20px; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions a { text-align: center; }
-      nav .nav-links { gap: 14px; }
-      nav .nav-links a:not(.cta) { display: none; }
-      .formats-list li { flex-direction: column; gap: 2px; }
-      footer { flex-direction: column; text-align: center; }
-    }
-  </style>
+          @media (max-width: 640px) {
+                  .hero { padding: 120px 20px 60px; flex-direction: column-reverse; text-align: center; gap: 32px; }
+                  .hero-headshot-wrapper { width: 150px; height: 150px; margin: 0 auto; }
+                  .hero-content { text-align: center; }
+                  .hero-actions { flex-direction: column; justify-content: center; }
+                  .hero-actions a { text-align: center; }
+                  section { padding: 40px 20px; }
+                  nav .nav-links { gap: 14px; }
+                  nav .nav-links a:not(.cta) { display: none; }
+                  .formats-list li { flex-direction: column; gap: 2px; }
+                  footer { flex-direction: column; text-align: center; }
+          }
+        </style>
 
       <!-- JSON-LD Structured Data -->
       <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "Christopher Grove | Speaking & Advisory",
-              "description": "Speaking and advisory on technology adoption, enterprise sales, and bridging legacy systems with AI.",
-              "url": "https://christopher-grove.com/speaking.html",
-              "author": {
-                "@type": "Person",
-                "name": "Christopher Grove",
-                "url": "https://christopher-grove.com",
-                "jobTitle": "General Manager | VP Sales & Operations",
-                "sameAs": [
-                  "https://linkedin.com/in/christopher-a-grove",
-                  "https://github.com/dubltap"
-                ]
-              }
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Christopher Grove | Speaking & Advisory",
+            "description": "Speaking and advisory on technology adoption, enterprise sales, and bridging legacy systems with AI.",
+            "url": "https://christopher-grove.com/speaking.html",
+            "image": "https://raw.githubusercontent.com/dubltap/Christopher-Grove/main/assets/christopher-grove-headshot.jpg",
+            "author": {
+              "@type": "Person",
+              "name": "Christopher Grove",
+              "url": "https://christopher-grove.com",
+              "image": "https://raw.githubusercontent.com/dubltap/Christopher-Grove/main/assets/christopher-grove-headshot.jpg",
+              "jobTitle": "General Manager | VP Sales & Operations",
+              "sameAs": [
+                "https://linkedin.com/in/christopher-a-grove",
+                "https://github.com/dubltap"
+              ]
             }
+          }
       </script>
-</head>
-<body>
+  </head>
+  <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-name">Christopher Grove</a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>
-        <a href="mailto:chris.a.grove@gmail.com" class="cta">Contact</a>
-      </div>
-    </div>
-  </nav>
+    <nav>
+        <div class="nav-inner">
+              <a href="/" class="nav-name">Christopher Grove</a>a>
+              <div class="nav-links">
+                      <a href="/">Home</a>a>
+                      <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>a>
+                      <a href="mailto:chris.a.grove@gmail.com" class="cta">Contact</a>a>
+              </div>div>
+        </div>div>
+    </nav>
 
-  <header class="hero">
-    <div class="hero-label">Speaking &amp; Advisory</div>
-    <h1>Practical lessons from building businesses around technical products.</h1>
-    <p>
-      I talk about what I've actually done — running a P&amp;L, driving technology adoption inside resistant organizations, selling complex solutions to technical buyers, and building AI-powered applications as a non-traditional developer. No frameworks from a book. No theory. Operational experience delivered straight.
-    </p>
-    <div class="hero-actions">
-      <a href="mailto:chris.a.grove@gmail.com" class="primary">Book a Session</a>
-      <a href="/" class="secondary">Full Profile</a>
-    </div>
-  </header>
+    <header class="hero">
+        <div class="hero-content">
+              <div class="hero-label">Speaking &amp; Advisory</div>div>
+              <h1>Practical lessons from building businesses around technical products.</h1>
+            <p>
+                    I talk about what I've actually done — running a P&amp;L, driving technology adoption inside resistant organizations, selling complex solutions to technical buyers, and building AI-powered applications as a non-traditional developer. No frameworks from a book. No theory. Operational experience delivered straight.
+            </p>
+              <div class="hero-actions">
+                      <a href="mailto:chris.a.grove@gmail.com" class="primary">Book a Session</a>a>
+                      <a href="/" class="secondary">Full Profile</a>a>
+              </div>div>
+        </div>div>
+        <div class="hero-headshot-wrapper">
+              <img src="assets/christopher-grove-headshot.jpg" alt="Christopher Grove — Speaker and advisor on technology adoption, enterprise sales, and AI integration" class="hero-headshot" width="400" height="500" loading="eager">
+        </div>div>
+    </header>header>
 
-  <!-- TOPICS -->
-  <section>
-    <div class="section-label">Topics</div>
-    <h2>What I speak about.</h2>
-    <div class="topics-grid">
+    <!-- TOPICS -->
+    <section>
+        <div class="section-label">Topics</div>div>
+        <h2>What I speak about.</h2>
+        <div class="topics-grid">
+              <div class="topic-card">
+                      <h3>Adoption Is the Product</h3>
+                      <p>You bought the platform. Now nobody uses it. I've driven adoption programs at Microsoft (30% to 70%+ across 200+ partners) and in industrial automation environments where change moves slow. This talk covers what actually works when the technology is ready but the organization isn't.</p>
+                      <div class="topic-audience">For: Engineering leadership, CIOs, operations executives, partner teams</div>div>
+              </div>div>
+              <div class="topic-card">
+                      <h3>Selling Complex Solutions to Smart Buyers</h3>
+                      <p>Enterprise sales where the buyer knows more than you about their own systems. How to earn technical credibility, run discovery that surfaces real problems, build solution architectures that close deals, and navigate long sales cycles without losing momentum. From $2M+ ARR in enterprise workflow automation and $45M+ in career revenue.</p>
+                      <div class="topic-audience">For: Sales teams, revenue leaders, founders selling into enterprise</div>div>
+              </div>div>
+              <div class="topic-card">
+                      <h3>Running the Whole Business — P&amp;L Leadership for Technical Operators</h3>
+                      <p>What it actually looks like to own a P&amp;L when you come from a technical background. Budgeting, reforecasting, margin discipline, hiring, client management, and making the numbers work when the team is small and the stakes are real. Lessons from managing a $2.8M industrial automation office.</p>
+                      <div class="topic-audience">For: Technical founders, new GMs, engineers moving into leadership</div>div>
+              </div>div>
+              <div class="topic-card">
+                      <h3>Building AI Apps Without a CS Degree</h3>
+                      <p>I shipped 9 AI-powered web applications at dubltap.io with no formal software engineering background. Decades of industrial automation and enterprise operations taught me how to think about systems, users, and production reliability in ways that bootcamp graduates don't. This talk is for the experienced operator who wants to build.</p>
+                      <div class="topic-audience">For: Non-traditional builders, career changers, enterprise operators exploring AI</div>div>
+              </div>div>
+              <div class="topic-card">
+                      <h3>Bridging Legacy Systems and Modern AI</h3>
+                      <p>Most organizations don't have greenfield environments. They have Siemens PLCs from 2008, Rockwell controllers running code nobody documented, and Schneider systems stitched together over decades. I've managed these environments and I build AI applications. This talk covers what's actually possible at the intersection — and what's hype.</p>
+                      <div class="topic-audience">For: Industrial technology leaders, OT/IT convergence teams, automation executives</div>div>
+              </div>div>
+              <div class="topic-card">
+                      <h3>The Operator Advantage: Why Generalists Win in the AI Era</h3>
+                      <p>The most valuable AI builders aren't the ones with the deepest ML expertise. They're the ones who understand operations, sales, delivery, and users — then apply AI to real problems. How a background in P&amp;L management, enterprise sales, and industrial automation becomes a competitive advantage in building AI products.</p>
+                      <div class="topic-audience">For: Executive audiences, conferences, Vistage groups, leadership offsites</div>div>
+              </div>div>
+        </div>div>
+    </section>
 
-      <div class="topic-card">
-        <h3>Adoption Is the Product</h3>
-        <p>You bought the platform. Now nobody uses it. I've driven adoption programs at Microsoft (30% to 70%+ across 200+ partners) and in industrial automation environments where change moves slow. This talk covers what actually works when the technology is ready but the organization isn't.</p>
-        <div class="topic-audience">For: Engineering leadership, CIOs, operations executives, partner teams</div>
-      </div>
+    <!-- FORMATS -->
+    <section>
+        <div class="section-label">Formats</div>div>
+        <h2>How I deliver.</h2>
+      <ul class="formats-list">
+          <li>
+                  <span class="format-name">Keynote</span>span>
+                  <span class="format-detail">30–60 minutes. Conference main stage, leadership offsites, Vistage groups.</span>span>
+          </li>
+            <li>
+                    <span class="format-name">Panel / Fireside Chat</span>span>
+                    <span class="format-detail">Moderated or participant. Enterprise tech, sales leadership, AI adoption.</span>span>
+            </li>
+            <li>
+                    <span class="format-name">Workshop</span>span>
+                    <span class="format-detail">Half or full day. Hands-on: GTM strategy, adoption playbooks, AI product scoping.</span>span>
+            </li>
+            <li>
+                    <span class="format-name">Advisory / Consulting Session</span>span>
+                    <span class="format-detail">1-on-1 or small group. Revenue strategy, technology adoption, product roadmap.</span>span>
+            </li>
+            <li>
+                    <span class="format-name">Podcast / Media</span>span>
+                    <span class="format-detail">Available for podcast interviews, webinars, and written Q&amp;A.</span>span>
+            </li>
+      </ul>ul>
+    </section>
 
-      <div class="topic-card">
-        <h3>Selling Complex Solutions to Smart Buyers</h3>
-        <p>Enterprise sales where the buyer knows more than you about their own systems. How to earn technical credibility, run discovery that surfaces real problems, build solution architectures that close deals, and navigate long sales cycles without losing momentum. From $2M+ ARR in enterprise workflow automation and $45M+ in career revenue.</p>
-        <div class="topic-audience">For: Sales teams, revenue leaders, founders selling into enterprise</div>
-      </div>
+    <!-- CREDIBILITY -->
+    <section>
+        <div class="section-label">Background</div>div>
+        <h2>Why listen to me.</h2>
+        <div class="cred-grid">
+              <div class="cred-item">
+                      <div class="cred-label">Current</div>div>
+                      <div class="cred-value">General Manager, VERUS Associates — $2.81M P&amp;L</div>div>
+              </div>div>
+              <div class="cred-item">
+                      <div class="cred-label">Builder</div>div>
+                      <div class="cred-value">Founder, dubltap.io — 9 AI apps shipped</div>div>
+              </div>div>
+              <div class="cred-item">
+                      <div class="cred-label">Enterprise Sales</div>div>
+                      <div class="cred-value">$2M+ ARR at Nintex, $45M+ career revenue</div>div>
+              </div>div>
+              <div class="cred-item">
+                      <div class="cred-label">Microsoft</div>div>
+                      <div class="cred-value">Partner programs adopted by 200+ partners</div>div>
+              </div>div>
+              <div class="cred-item">
+                      <div class="cred-label">Published</div>div>
+                      <div class="cred-value">Mind Beyond Mind (Amazon)</div>div>
+              </div>div>
+              <div class="cred-item">
+                      <div class="cred-label">Security</div>div>
+                      <div class="cred-value">Active researcher on HackerOne</div>div>
+              </div>div>
+        </div>div>
+    </section>
 
-      <div class="topic-card">
-        <h3>Running the Whole Business — P&amp;L Leadership for Technical Operators</h3>
-        <p>What it actually looks like to own a P&amp;L when you come from a technical background. Budgeting, reforecasting, margin discipline, hiring, client management, and making the numbers work when the team is small and the stakes are real. Lessons from managing a $2.8M industrial automation office.</p>
-        <div class="topic-audience">For: Technical founders, new GMs, engineers moving into leadership</div>
-      </div>
+    <!-- CTA -->
+    <section style="text-align:center; max-width:600px;">
+        <h2 style="margin-bottom:12px;">Let's talk.</h2>
+        <p style="margin:0 auto 24px; text-align:center;">Reach out with the event, audience, and topic area. I'll respond within 24 hours.</p>p>
+        <div class="hero-actions" style="justify-content:center;">
+              <a href="mailto:chris.a.grove@gmail.com" class="primary">Email Me</a>a>
+              <a href="https://linkedin.com/in/christopher-a-grove" class="secondary">LinkedIn</a>a>
+        </div>div>
+    </section>
 
-      <div class="topic-card">
-        <h3>Building AI Apps Without a CS Degree</h3>
-        <p>I shipped 9 AI-powered web applications at dubltap.io with no formal software engineering background. Decades of industrial automation and enterprise operations taught me how to think about systems, users, and production reliability in ways that bootcamp graduates don't. This talk is for the experienced operator who wants to build.</p>
-        <div class="topic-audience">For: Non-traditional builders, career changers, enterprise operators exploring AI</div>
-      </div>
+    <footer>
+        <div class="footer-left">Everett, WA &bull; &copy; 2026 Christopher Grove</div>div>
+        <div class="footer-links">
+              <a href="mailto:chris.a.grove@gmail.com">Email</a>a>
+              <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>a>
+              <a href="https://github.com/dubltap">GitHub</a>a>
+              <a href="https://dubltap.io">dubltap.io</a>a>
+        </div>div>
+    </footer>
 
-      <div class="topic-card">
-        <h3>Bridging Legacy Systems and Modern AI</h3>
-        <p>Most organizations don't have greenfield environments. They have Siemens PLCs from 2008, Rockwell controllers running code nobody documented, and Schneider systems stitched together over decades. I've managed these environments and I build AI applications. This talk covers what's actually possible at the intersection — and what's hype.</p>
-        <div class="topic-audience">For: Industrial technology leaders, OT/IT convergence teams, automation executives</div>
-      </div>
-
-      <div class="topic-card">
-        <h3>The Operator Advantage: Why Generalists Win in the AI Era</h3>
-        <p>The most valuable AI builders aren't the ones with the deepest ML expertise. They're the ones who understand operations, sales, delivery, and users — then apply AI to real problems. How a background in P&amp;L management, enterprise sales, and industrial automation becomes a competitive advantage in building AI products.</p>
-        <div class="topic-audience">For: Executive audiences, conferences, Vistage groups, leadership offsites</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FORMATS -->
-  <section>
-    <div class="section-label">Formats</div>
-    <h2>How I deliver.</h2>
-    <ul class="formats-list">
-      <li>
-        <span class="format-name">Keynote</span>
-        <span class="format-detail">30–60 minutes. Conference main stage, leadership offsites, Vistage groups.</span>
-      </li>
-      <li>
-        <span class="format-name">Panel / Fireside Chat</span>
-        <span class="format-detail">Moderated or participant. Enterprise tech, sales leadership, AI adoption.</span>
-      </li>
-      <li>
-        <span class="format-name">Workshop</span>
-        <span class="format-detail">Half or full day. Hands-on: GTM strategy, adoption playbooks, AI product scoping.</span>
-      </li>
-      <li>
-        <span class="format-name">Advisory / Consulting Session</span>
-        <span class="format-detail">1-on-1 or small group. Revenue strategy, technology adoption, product roadmap.</span>
-      </li>
-      <li>
-        <span class="format-name">Podcast / Media</span>
-        <span class="format-detail">Available for podcast interviews, webinars, and written Q&amp;A.</span>
-      </li>
-    </ul>
-  </section>
-
-  <!-- CREDIBILITY -->
-  <section>
-    <div class="section-label">Background</div>
-    <h2>Why listen to me.</h2>
-    <div class="cred-grid">
-      <div class="cred-item">
-        <div class="cred-label">Current</div>
-        <div class="cred-value">General Manager, VERUS Associates — $2.81M P&amp;L</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">Builder</div>
-        <div class="cred-value">Founder, dubltap.io — 9 AI apps shipped</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">Enterprise Sales</div>
-        <div class="cred-value">$2M+ ARR at Nintex, $45M+ career revenue</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">Microsoft</div>
-        <div class="cred-value">Partner programs adopted by 200+ partners</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">Published</div>
-        <div class="cred-value">Mind Beyond Mind (Amazon)</div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-label">Security</div>
-        <div class="cred-value">Active researcher on HackerOne</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="text-align:center; max-width:600px;">
-    <h2 style="margin-bottom:12px;">Let's talk.</h2>
-    <p style="margin:0 auto 24px; text-align:center;">Reach out with the event, audience, and topic area. I'll respond within 24 hours.</p>
-    <div class="hero-actions" style="justify-content:center;">
-      <a href="mailto:chris.a.grove@gmail.com" class="primary">Email Me</a>
-      <a href="https://linkedin.com/in/christopher-a-grove" class="secondary">LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-left">Everett, WA &bull; &copy; 2026 Christopher Grove</div>
-    <div class="footer-links">
-      <a href="mailto:chris.a.grove@gmail.com">Email</a>
-      <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>
-      <a href="https://github.com/dubltap">GitHub</a>
-      <a href="https://dubltap.io">dubltap.io</a>
-    </div>
-  </footer>
-
-</body>
-</html>
+  </body>
+</html>html>
+    </footer>
+            </li>
+          </li></h2>
+    </section>
+    </section>
+            </p></h1>
+    </nav>
+  </body>
+    </style></title>
+  </head>
