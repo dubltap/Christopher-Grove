@@ -1,5 +1,9 @@
 # Christopher Grove
 
+<div align="center">
+  <img src="assets/christopher-grove-headshot.jpg" alt="Christopher Grove — General Manager and VP Sales and Operations leader" width="180">
+</div>
+
 **General Manager | VP Sales & Operations | Enterprise Solutions | Product Builder**
 
 Everett, WA &bull; [christopher-grove.com](https://christopher-grove.com) &bull; [LinkedIn](https://linkedin.com/in/christopher-a-grove) &bull; [dubltap.io](https://dubltap.io) &bull; [Email](mailto:chris.a.grove@gmail.com)
