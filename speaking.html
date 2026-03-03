@@ -1,1274 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Reinvention Operating System | Christopher Grove — Keynote Speaker</title>
-    <meta name="description" content="A keynote for leaders navigating pressure, technology transformation, and the demand to perform. Grounded in metacognition. Refined over four decades. Book Christopher Grove.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-bg: #0a0a0b;
-            --color-bg-elevated: #141416;
-            --color-bg-subtle: #1a1a1f;
-            --color-text: #e8e8ed;
-            --color-text-muted: #9898a3;
-            --color-accent: #6b8afd;
-            --color-accent-hover: #8aa3ff;
-            --color-accent-subtle: rgba(107, 138, 253, 0.12);
-            --color-accent-warm: #f59e0b;
-            --color-accent-warm-subtle: rgba(245, 158, 11, 0.12);
-            --color-border: rgba(255, 255, 255, 0.08);
-            --color-border-hover: rgba(255, 255, 255, 0.15);
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-serif: 'Playfair Display', Georgia, serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.7;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1.25rem 2rem;
-            background: rgba(10, 10, 11, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--color-text);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-brand span {
-            color: var(--color-text-muted);
-            font-weight: 400;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-text);
-        }
-
-        .nav-cta {
-            background: var(--color-accent);
-            color: #fff !important;
-            padding: 0.6rem 1.25rem;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: background 0.2s, transform 0.2s;
-        }
-
-        .nav-cta:hover {
-            background: var(--color-accent-hover);
-            transform: translateY(-1px);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 2rem 6rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150%;
-            height: 100%;
-            background: radial-gradient(ellipse at 50% 0%, rgba(107, 138, 253, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .hero-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 1.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--color-accent-subtle);
-            border-radius: 100px;
-        }
-
-        .hero h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.75rem, 6vw, 4.25rem);
-            font-weight: 500;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.75rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.35rem;
-            color: var(--color-text-muted);
-            max-width: 750px;
-            line-height: 1.6;
-            margin-bottom: 1.25rem;
-        }
-
-        .hero-subtext {
-            font-size: 1.05rem;
-            color: var(--color-text-muted);
-            max-width: 700px;
-            margin-bottom: 2.5rem;
-            font-style: italic;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.25s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--color-accent);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--color-accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(107, 138, 253, 0.25);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--color-text);
-            border: 1px solid var(--color-border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--color-border-hover);
-            background: var(--color-bg-elevated);
-        }
-
-        /* Sections */
-        section {
-            padding: 6rem 2rem;
-            position: relative;
-        }
-
-        .section-inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 500;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            color: var(--color-text-muted);
-            margin-bottom: 1.25rem;
-        }
-
-        /* Problem Section */
-        .problem {
-            background: var(--color-bg-elevated);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        .problem-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .problem-text p:first-of-type {
-            color: var(--color-text);
-            font-size: 1.2rem;
-        }
-
-        .problem-visual {
-            padding: 2.5rem;
-            background: var(--color-bg);
-            border-radius: 16px;
-            border: 1px solid var(--color-border);
-        }
-
-        .problem-visual blockquote {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            font-style: italic;
-            line-height: 1.5;
-            color: var(--color-text);
-            position: relative;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--color-accent);
-        }
-
-        /* Differentiator Section */
-        .differentiator {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .differentiator::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -20%;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-            transform: translateY(-50%);
-        }
-
-        .diff-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .diff-card {
-            padding: 2.5rem;
-            background: var(--color-bg-elevated);
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            position: relative;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .diff-card:hover {
-            border-color: var(--color-border-hover);
-            transform: translateY(-4px);
-        }
-
-        .diff-card.featured {
-            border-color: var(--color-accent);
-            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, rgba(107, 138, 253, 0.05) 100%);
-        }
-
-        .diff-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-        .diff-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-            color: var(--color-text);
-        }
-
-        .diff-card p {
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        /* Pillars Section */
-        .pillars {
-            background: var(--color-bg-elevated);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .pillars-intro {
-            max-width: 700px;
-            margin-bottom: 3rem;
-        }
-
-        .pillars-intro p {
-            font-size: 1.15rem;
-            color: var(--color-text);
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .pillar-card {
-            padding: 2rem;
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .pillar-card:hover {
-            border-color: var(--color-accent);
-            transform: translateY(-3px);
-        }
-
-        .pillar-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--color-accent-subtle);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.75rem;
-        }
-
-        .pillar-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .pillar-card p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* Outcomes Section */
-        .outcomes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .outcome-card {
-            padding: 2rem;
-            background: var(--color-bg-elevated);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .outcome-card:hover {
-            border-color: var(--color-border-hover);
-            transform: translateY(-3px);
-        }
-
-        .outcome-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--color-accent-subtle);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-            font-size: 1.5rem;
-        }
-
-        .outcome-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .outcome-card p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* Talk Arc Section */
-        .arc {
-            background: var(--color-bg-elevated);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .arc-timeline {
-            margin-top: 3rem;
-            position: relative;
-        }
-
-        .arc-timeline::before {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-subtle));
-        }
-
-        .arc-item {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .arc-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .arc-marker {
-            width: 50px;
-            height: 50px;
-            background: var(--color-bg);
-            border: 2px solid var(--color-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--color-accent);
-            flex-shrink: 0;
-            z-index: 1;
-        }
-
-        .arc-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.35rem;
-            color: var(--color-text);
-        }
-
-        .arc-content p {
-            margin-bottom: 0;
-            font-size: 1rem;
-        }
-
-        /* Why Now Section */
-        .why-now-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-            align-items: start;
-        }
-
-        .why-now-points {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .why-now-point {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            padding: 1.5rem;
-            background: var(--color-bg-elevated);
-            border: 1px solid var(--color-border);
-            border-radius: 10px;
-        }
-
-        .why-now-point-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--color-accent-subtle);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.1rem;
-        }
-
-        .why-now-point p {
-            margin-bottom: 0;
-            color: var(--color-text);
-            font-size: 1rem;
-        }
-
-        .why-now-insight {
-            padding: 2.5rem;
-            background: linear-gradient(135deg, var(--color-bg-elevated) 0%, rgba(107, 138, 253, 0.08) 100%);
-            border: 1px solid var(--color-accent);
-            border-radius: 16px;
-        }
-
-        .why-now-insight p {
-            font-size: 1.15rem;
-            color: var(--color-text);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .why-now-insight p:last-child {
-            margin-bottom: 0;
-            font-family: var(--font-serif);
-            font-style: italic;
-            color: var(--color-accent);
-            font-size: 1.25rem;
-        }
-
-        /* Formats Section */
-        .formats {
-            background: var(--color-bg-elevated);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .formats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .format-card {
-            padding: 2rem;
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-            text-align: center;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-
-        .format-card:hover {
-            border-color: var(--color-accent);
-            transform: translateY(-3px);
-        }
-
-        .format-duration {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .format-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .format-card p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        /* Audiences Section */
-        .audiences-list {
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .audience-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: var(--color-bg-elevated);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--color-text);
-            transition: border-color 0.2s;
-        }
-
-        .audience-item:hover {
-            border-color: var(--color-border-hover);
-        }
-
-        .audience-item::before {
-            content: '✓';
-            color: var(--color-accent);
-            font-weight: 700;
-        }
-
-        /* Throughline Section */
-        .throughline {
-            background: var(--color-bg-elevated);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .throughline-content {
-            max-width: 750px;
-        }
-
-        .throughline-content p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--color-text);
-        }
-
-        .throughline-content p.highlight {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--color-accent);
-            margin-top: 2rem;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--color-accent);
-        }
-
-        .throughline-arc {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 12px;
-        }
-
-        .throughline-arc h4 {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 1.25rem;
-        }
-
-        .arc-flow {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .arc-flow-item {
-            padding: 0.5rem 1rem;
-            background: var(--color-bg-elevated);
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: var(--color-text);
-        }
-
-        .arc-flow-arrow {
-            color: var(--color-accent);
-            font-size: 1.1rem;
-        }
-
-        /* Booking Section */
-        .booking {
-            text-align: center;
-            padding: 8rem 2rem;
-        }
-
-        .booking h2 {
-            margin-bottom: 1rem;
-        }
-
-        .booking > p {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-
-        .booking-steps {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .booking-step {
-            text-align: center;
-        }
-
-        .booking-step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--color-accent-subtle);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--color-accent);
-            margin: 0 auto 1rem;
-            font-size: 1.1rem;
-        }
-
-        .booking-step h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .booking-step p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        /* Footer */
-        footer {
-            padding: 4rem 2rem;
-            border-top: 1px solid var(--color-border);
-            text-align: center;
-        }
-
-        .footer-name {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .footer-title {
-            color: var(--color-text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--color-accent);
-        }
-
-        .footer-location {
-            color: var(--color-text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-quote {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--color-text-muted);
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .footer-copyright {
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .problem-grid,
-            .diff-grid,
-            .why-now-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .pillars-grid,
-            .formats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .audiences-list {
-                grid-template-columns: 1fr;
-            }
-
-            .booking-steps {
-                flex-direction: column;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            nav {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a:not(.nav-cta) {
-                display: none;
-            }
-
-            .hero {
-                padding: 7rem 1.5rem 4rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .hero-ctas {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .arc-item {
-                gap: 1.25rem;
-            }
-
-            .arc-marker {
-                width: 40px;
-                height: 40px;
-                font-size: 0.8rem;
-            }
-
-            .arc-timeline::before {
-                left: 19px;
-            }
-
-            .arc-flow {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .arc-flow-arrow {
-                transform: rotate(90deg);
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Grove | Speaking &amp; Advisory</title>
+  <meta name="description" content="Christopher Grove — Speaking and advisory on technology adoption, enterprise sales leadership, operational transformation, and bridging legacy systems with AI. Available for keynotes, panels, workshops, and advisory engagements.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://christopher-grove.com/speaking.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #1a2a3a;
+      --navy-light: #2e4a62;
+      --slate: #475569;
+      --steel: #64748b;
+      --stone: #94a3b8;
+      --cream: #f8f6f3;
+      --warm-white: #fefdfb;
+      --accent: #2e5a88;
+      --rule: #d4d0ca;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --serif: 'Newsreader', Georgia, serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--navy);
+      background: var(--warm-white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(254, 253, 251, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    nav .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .nav-name {
+      font-weight: 700; font-size: 15px; color: var(--navy);
+      text-decoration: none; letter-spacing: 0.02em;
+    }
+    nav .nav-links { display: flex; gap: 24px; align-items: center; }
+    nav .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--steel);
+      text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--navy); }
+    nav .nav-links a.cta {
+      background: var(--navy); color: white; padding: 7px 16px;
+      border-radius: 4px; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    nav .nav-links a.cta:hover { background: var(--navy-light); }
+
+    .hero {
+      max-width: 960px; margin: 0 auto; padding: 140px 24px 80px;
+    }
+    .hero-label {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);
+      border: 1px solid var(--accent); padding: 4px 12px; border-radius: 3px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(32px, 4.5vw, 46px);
+      font-weight: 500; line-height: 1.2; color: var(--navy);
+      margin-bottom: 16px; max-width: 680px;
+    }
+    .hero p {
+      font-size: 16px; color: var(--slate); max-width: 600px;
+      line-height: 1.7; margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions a {
+      display: inline-block; padding: 10px 22px; font-size: 13px;
+      font-weight: 600; letter-spacing: 0.03em; text-decoration: none;
+      border-radius: 4px; transition: all 0.2s;
+    }
+    .hero-actions .primary { background: var(--navy); color: white; }
+    .hero-actions .primary:hover { background: var(--navy-light); }
+    .hero-actions .secondary { border: 1px solid var(--rule); color: var(--slate); }
+    .hero-actions .secondary:hover { border-color: var(--navy); color: var(--navy); }
+
+    section {
+      max-width: 960px; margin: 0 auto; padding: 60px 24px;
+    }
+    section + section { border-top: 1px solid var(--rule); }
+
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+    }
+    section h2 {
+      font-family: var(--serif); font-size: 28px; font-weight: 500;
+      color: var(--navy); margin-bottom: 20px;
+    }
+    section p {
+      font-size: 15px; color: var(--slate); line-height: 1.7;
+      max-width: 640px; margin-bottom: 16px;
+    }
+
+    .topics-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 24px;
+    }
+    .topic-card {
+      padding: 28px; border: 1px solid var(--rule); border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+    .topic-card:hover { border-color: var(--accent); }
+    .topic-card h3 {
+      font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px;
+    }
+    .topic-card p {
+      font-size: 14px; color: var(--slate); line-height: 1.65; max-width: none; margin-bottom: 0;
+    }
+    .topic-card .topic-audience {
+      font-size: 12px; color: var(--stone); margin-top: 12px;
+      font-style: italic;
+    }
+
+    .formats-list {
+      list-style: none; margin-top: 20px;
+    }
+    .formats-list li {
+      padding: 16px 0; border-bottom: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .formats-list li:last-child { border-bottom: none; }
+    .format-name { font-weight: 700; font-size: 15px; color: var(--navy); }
+    .format-detail { font-size: 13px; color: var(--steel); }
+
+    .cred-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 24px;
+    }
+    .cred-item {
+      padding: 20px; background: var(--cream); border-radius: 6px;
+      border: 1px solid var(--rule);
+    }
+    .cred-item .cred-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px;
+    }
+    .cred-item .cred-value {
+      font-size: 14px; color: var(--navy); line-height: 1.5;
+    }
+
+    footer {
+      max-width: 960px; margin: 0 auto; padding: 40px 24px;
+      border-top: 1px solid var(--rule);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    footer .footer-left { font-size: 13px; color: var(--stone); }
+    footer .footer-links { display: flex; gap: 20px; }
+    footer .footer-links a {
+      font-size: 13px; color: var(--steel); text-decoration: none;
+    }
+    footer .footer-links a:hover { color: var(--navy); }
+
+    @media (max-width: 640px) {
+      .hero { padding: 120px 20px 60px; }
+      section { padding: 40px 20px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions a { text-align: center; }
+      nav .nav-links { gap: 14px; }
+      nav .nav-links a:not(.cta) { display: none; }
+      .formats-list li { flex-direction: column; gap: 2px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-inner">
-            <a href="/" class="nav-brand">Christopher Grove <span>/ Convergence Architect</span></a>
-            <div class="nav-links">
-                <a href="/">About</a>
-                <a href="/onesheet">One-Sheet</a>
-                <a href="https://calendly.com/dubltap66/30min" class="nav-cta">Book a Call</a>
-            </div>
-        </div>
-    </nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-name">Christopher Grove</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>
+        <a href="mailto:chris.a.grove@gmail.com" class="cta">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-inner">
-            <span class="hero-label">Flagship Keynote</span>
-            <h1>The Reinvention Operating System</h1>
-            <p class="hero-subtitle">A keynote for leaders navigating pressure, technology transformation, and the demand to perform — without burning out or leaving their teams behind.</p>
-            <p class="hero-subtext">Grounded in metacognition. Refined across four decades. Built for the AI era.</p>
-            <div class="hero-ctas">
-                <a href="https://calendly.com/dubltap66/30min" class="btn btn-primary">
-                    Request Availability
-                </a>
-                <a href="/onesheet" class="btn btn-secondary">
-                    Download One-Sheet
-                </a>
-            </div>
-        </div>
-    </section>
+  <header class="hero">
+    <div class="hero-label">Speaking &amp; Advisory</div>
+    <h1>Practical lessons from building businesses around technical products.</h1>
+    <p>
+      I talk about what I've actually done — running a P&amp;L, driving technology adoption inside resistant organizations, selling complex solutions to technical buyers, and building AI-powered applications as a non-traditional developer. No frameworks from a book. No theory. Operational experience delivered straight.
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:chris.a.grove@gmail.com" class="primary">Book a Session</a>
+      <a href="/" class="secondary">Full Profile</a>
+    </div>
+  </header>
 
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="section-inner">
-            <div class="problem-grid">
-                <div class="problem-text">
-                    <span class="section-label">The Problem Worth Naming</span>
-                    <h2>Every leader knows the feeling.</h2>
-                    <p>The pressure is constant. The complexity keeps compounding. Technology is shifting faster than teams can adapt. And somewhere between "strategic priorities" and "urgent fires," clarity disappears.</p>
-                    <p>Most advice says work harder, stay positive, or embrace the chaos.</p>
-                    <p>That's not a system. That's a slogan.</p>
-                </div>
-                <div class="problem-visual">
-                    <blockquote>
-                        "The Reinvention Operating System is different. It's a framework — grounded in metacognition and refined across four decades — that helps leaders reset under pressure, embrace technology as a multiplier, and execute with a rhythm that actually sticks."
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- TOPICS -->
+  <section>
+    <div class="section-label">Topics</div>
+    <h2>What I speak about.</h2>
+    <div class="topics-grid">
 
-    <!-- Differentiator Section -->
-    <section class="differentiator">
-        <div class="section-inner">
-            <span class="section-label">What Makes This Different</span>
-            <h2>This system works because it's been lived.</h2>
-            <p style="max-width: 700px; font-size: 1.1rem;">Not theorized from a textbook. Not borrowed from a bestseller. Employed, developed, and refined across a career spanning recording studios, factory floors, enterprise platforms, and AI agents.</p>
-            
-            <div class="diff-grid">
-                <div class="diff-card featured">
-                    <div class="diff-label">The Foundation</div>
-                    <h3>Metacognitive Approach</h3>
-                    <p>The practice of thinking about how we think — applied across technical, athletic, and creative disciplines. It sharpens decision-making, builds clearer perception of successful outcomes, and helps teams work as a collective rather than a collection of individuals.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-label">The Lens</div>
-                    <h3>Technology Evangelism</h3>
-                    <p>Four decades building systems creates a lens most speakers can't offer. AI and emerging technology become opportunities to elevate teams and customers — not threats to manage or resist.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-label">The Bridge</div>
-                    <h3>Change Enablement</h3>
-                    <p>Transformation fails when people feel managed instead of helped. This framework guides adoption by meeting teams where they are and building trust through demonstrated value — not mandates.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-label">The Proof</div>
-                    <h3>Operational Credibility</h3>
-                    <p>From keynotes and user groups to enterprise-scale programs — this methodology has been tested under real pressure with real teams delivering real outcomes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="topic-card">
+        <h3>Adoption Is the Product</h3>
+        <p>You bought the platform. Now nobody uses it. I've driven adoption programs at Microsoft (30% to 70%+ across 200+ partners) and in industrial automation environments where change moves slow. This talk covers what actually works when the technology is ready but the organization isn't.</p>
+        <div class="topic-audience">For: Engineering leadership, CIOs, operations executives, partner teams</div>
+      </div>
 
-    <!-- Three Pillars Section -->
-    <section class="pillars">
-        <div class="section-inner">
-            <span class="section-label">The Three Pillars</span>
-            <h2>Mindset. Technology. Execution.</h2>
-            <div class="pillars-intro">
-                <p>Most keynotes address one of these. This one integrates all three — because sustainable performance requires the complete system.</p>
-            </div>
-            
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <div class="pillar-icon">◎</div>
-                    <h3>Mindset Reset</h3>
-                    <p>Interrupt the spiral. Sharpen awareness. Perform under pressure by observing how you think — not just what you think.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">⚡</div>
-                    <h3>Technology as Multiplier</h3>
-                    <p>See AI and emerging tech as tools that elevate human capability. Build the mindset for adoption that creates competitive advantage.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon">↗</div>
-                    <h3>Collective Execution</h3>
-                    <p>Align teams on outcomes — not just tasks. Execute with a 90-day rhythm that creates accountability, momentum, and sustainable performance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="topic-card">
+        <h3>Selling Complex Solutions to Smart Buyers</h3>
+        <p>Enterprise sales where the buyer knows more than you about their own systems. How to earn technical credibility, run discovery that surfaces real problems, build solution architectures that close deals, and navigate long sales cycles without losing momentum. From $2M+ ARR in enterprise workflow automation and $45M+ in career revenue.</p>
+        <div class="topic-audience">For: Sales teams, revenue leaders, founders selling into enterprise</div>
+      </div>
 
-    <!-- Outcomes Section -->
-    <section class="outcomes">
-        <div class="section-inner">
-            <span class="section-label">What Audiences Leave With</span>
-            <h2>Practical tools. Immediate clarity.</h2>
-            <div class="outcomes-grid">
-                <div class="outcome-card">
-                    <div class="outcome-icon">⟳</div>
-                    <h3>Reset Protocol</h3>
-                    <p>A repeatable method for interrupting spirals and regaining presence under pressure.</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">◎</div>
-                    <h3>The Operating System</h3>
-                    <p>Priorities → Rituals → Scoreboard. A structure that creates clarity without rigidity.</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">↗</div>
-                    <h3>90-Day Rhythm</h3>
-                    <p>A clear execution cadence — what ships, what stops, what waits.</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">◇</div>
-                    <h3>Metacognitive Edge</h3>
-                    <p>Tools for observing your own decision-making and improving it in real time.</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">⚡</div>
-                    <h3>Technology Adoption Lens</h3>
-                    <p>A framework for embracing AI as opportunity — and helping your team do the same.</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">☰</div>
-                    <h3>Collective Alignment</h3>
-                    <p>Move from a collection of individuals to a team executing as one.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="topic-card">
+        <h3>Running the Whole Business — P&amp;L Leadership for Technical Operators</h3>
+        <p>What it actually looks like to own a P&amp;L when you come from a technical background. Budgeting, reforecasting, margin discipline, hiring, client management, and making the numbers work when the team is small and the stakes are real. Lessons from managing a $2.8M industrial automation office.</p>
+        <div class="topic-audience">For: Technical founders, new GMs, engineers moving into leadership</div>
+      </div>
 
-    <!-- Talk Arc Section -->
-    <section class="arc">
-        <div class="section-inner">
-            <span class="section-label">The Talk Arc</span>
-            <h2>Five movements. One transformation.</h2>
-            <div class="arc-timeline">
-                <div class="arc-item">
-                    <div class="arc-marker">01</div>
-                    <div class="arc-content">
-                        <h3>Reset</h3>
-                        <p>Interrupt the spiral. Get present. Create space for clear thinking through metacognitive awareness.</p>
-                    </div>
-                </div>
-                <div class="arc-item">
-                    <div class="arc-marker">02</div>
-                    <div class="arc-content">
-                        <h3>Reframe</h3>
-                        <p>Turn adversity into a playable plan. See technology as opportunity. Shift from reactive to responsive.</p>
-                    </div>
-                </div>
-                <div class="arc-item">
-                    <div class="arc-marker">03</div>
-                    <div class="arc-content">
-                        <h3>System</h3>
-                        <p>Build the operating rhythm — priorities, rituals, scoreboard. Create structure that absorbs chaos.</p>
-                    </div>
-                </div>
-                <div class="arc-item">
-                    <div class="arc-marker">04</div>
-                    <div class="arc-content">
-                        <h3>Identity Shift</h3>
-                        <p>Move from "worker" to "builder." From individual contributor to collective architect. Own the transformation.</p>
-                    </div>
-                </div>
-                <div class="arc-item">
-                    <div class="arc-marker">05</div>
-                    <div class="arc-content">
-                        <h3>90-Day Run</h3>
-                        <p>Leave with an execution plan the team can actually follow — and the mindset to adapt when conditions change.</p>
-                    </div>
-                </div>
-            </div>
-            <p style="margin-top: 2.5rem; font-style: italic; color: var(--color-text-muted);">
-                Tailored for sales/GTM performance, technology adoption initiatives, leadership offsites, or broader organizational reinvention.
-            </p>
-        </div>
-    </section>
+      <div class="topic-card">
+        <h3>Building AI Apps Without a CS Degree</h3>
+        <p>I shipped 9 AI-powered web applications at dubltap.io with no formal software engineering background. Decades of industrial automation and enterprise operations taught me how to think about systems, users, and production reliability in ways that bootcamp graduates don't. This talk is for the experienced operator who wants to build.</p>
+        <div class="topic-audience">For: Non-traditional builders, career changers, enterprise operators exploring AI</div>
+      </div>
 
-    <!-- Why Now Section -->
-    <section class="why-now">
-        <div class="section-inner">
-            <span class="section-label">Why This. Why Now.</span>
-            <h2>The context has changed.</h2>
-            
-            <div class="why-now-grid">
-                <div class="why-now-points">
-                    <div class="why-now-point">
-                        <div class="why-now-point-icon">⚡</div>
-                        <p><strong>AI is shifting from novelty to necessity.</strong> Leaders need frameworks for adoption that create excitement, not resistance.</p>
-                    </div>
-                    <div class="why-now-point">
-                        <div class="why-now-point-icon">◎</div>
-                        <p><strong>Complexity has outpaced bandwidth.</strong> Teams are doing more with less — and the cognitive load is showing.</p>
-                    </div>
-                    <div class="why-now-point">
-                        <div class="why-now-point-icon">↗</div>
-                        <p><strong>Resilience is now competitive advantage.</strong> The teams that reset quickly and execute clearly are pulling ahead.</p>
-                    </div>
-                </div>
-                
-                <div class="why-now-insight">
-                    <p>The leaders who thrive won't be the ones who resist the change or simply endure it.</p>
-                    <p>They'll be the ones who build systems — mental, operational, technological — that let them think clearly under pressure and bring their teams along for the transformation.</p>
-                    <p>"That's what this keynote is built for."</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="topic-card">
+        <h3>Bridging Legacy Systems and Modern AI</h3>
+        <p>Most organizations don't have greenfield environments. They have Siemens PLCs from 2008, Rockwell controllers running code nobody documented, and Schneider systems stitched together over decades. I've managed these environments and I build AI applications. This talk covers what's actually possible at the intersection — and what's hype.</p>
+        <div class="topic-audience">For: Industrial technology leaders, OT/IT convergence teams, automation executives</div>
+      </div>
 
-    <!-- Formats Section -->
-    <section class="formats">
-        <div class="section-inner">
-            <span class="section-label">Formats</span>
-            <h2>Flexible delivery. Maximum impact.</h2>
-            <div class="formats-grid">
-                <div class="format-card">
-                    <div class="format-duration">45–60<span style="font-size: 1rem; font-weight: 400;"> min</span></div>
-                    <h3>Keynote</h3>
-                    <p>Conferences, all-hands meetings, sales kickoffs, leadership summits.</p>
-                </div>
-                <div class="format-card">
-                    <div class="format-duration">60–75<span style="font-size: 1rem; font-weight: 400;"> min</span></div>
-                    <h3>Keynote + Q&A</h3>
-                    <p>Leadership offsites, executive retreats, CEO peer groups.</p>
-                </div>
-                <div class="format-card">
-                    <div class="format-duration">90–180<span style="font-size: 1rem; font-weight: 400;"> min</span></div>
-                    <h3>Workshop Sprint</h3>
-                    <p>Enablement sessions, team intensives, hands-on application.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="topic-card">
+        <h3>The Operator Advantage: Why Generalists Win in the AI Era</h3>
+        <p>The most valuable AI builders aren't the ones with the deepest ML expertise. They're the ones who understand operations, sales, delivery, and users — then apply AI to real problems. How a background in P&amp;L management, enterprise sales, and industrial automation becomes a competitive advantage in building AI products.</p>
+        <div class="topic-audience">For: Executive audiences, conferences, Vistage groups, leadership offsites</div>
+      </div>
 
-    <!-- Audiences Section -->
-    <section class="audiences">
-        <div class="section-inner">
-            <span class="section-label">Who Books This</span>
-            <h2>Built for leaders navigating transformation.</h2>
-            <div class="audiences-list">
-                <div class="audience-item">Sales & go-to-market teams under pressure</div>
-                <div class="audience-item">Organizations adopting AI and emerging tech</div>
-                <div class="audience-item">Partner and channel teams navigating change</div>
-                <div class="audience-item">Leadership offsites seeking clarity and alignment</div>
-                <div class="audience-item">L&D and enablement building execution culture</div>
-                <div class="audience-item">Vistage and CEO peer groups exploring reinvention</div>
-            </div>
-        </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Throughline Section -->
-    <section class="throughline">
-        <div class="section-inner">
-            <div class="throughline-content">
-                <span class="section-label">The Throughline</span>
-                <h2>Where this comes from.</h2>
-                <p>Forty years building systems — recording studios, factory floors, enterprise platforms, AI agents — revealed a consistent truth:</p>
-                <p class="highlight">The technology is never the hard part. Helping humans trust it, use it, and improve with it — that's the hard part.</p>
-                <p style="margin-top: 2rem;">Every domain required the same discipline: metacognition — the practice of thinking about how we think. Applied to technical work. Refined through athletic training. Expressed in creative production. Proven at enterprise scale.</p>
-                <p>This keynote is the distillation of that work: a practical operating system for leaders who need to perform under pressure, embrace emerging technology, and bring their teams along for the transformation.</p>
-                
-                <div class="throughline-arc">
-                    <h4>The 40-Year Arc</h4>
-                    <div class="arc-flow">
-                        <span class="arc-flow-item">Recording Studios</span>
-                        <span class="arc-flow-arrow">→</span>
-                        <span class="arc-flow-item">Factory Floors</span>
-                        <span class="arc-flow-arrow">→</span>
-                        <span class="arc-flow-item">Enterprise Platforms</span>
-                        <span class="arc-flow-arrow">→</span>
-                        <span class="arc-flow-item">AI Agents</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- FORMATS -->
+  <section>
+    <div class="section-label">Formats</div>
+    <h2>How I deliver.</h2>
+    <ul class="formats-list">
+      <li>
+        <span class="format-name">Keynote</span>
+        <span class="format-detail">30–60 minutes. Conference main stage, leadership offsites, Vistage groups.</span>
+      </li>
+      <li>
+        <span class="format-name">Panel / Fireside Chat</span>
+        <span class="format-detail">Moderated or participant. Enterprise tech, sales leadership, AI adoption.</span>
+      </li>
+      <li>
+        <span class="format-name">Workshop</span>
+        <span class="format-detail">Half or full day. Hands-on: GTM strategy, adoption playbooks, AI product scoping.</span>
+      </li>
+      <li>
+        <span class="format-name">Advisory / Consulting Session</span>
+        <span class="format-detail">1-on-1 or small group. Revenue strategy, technology adoption, product roadmap.</span>
+      </li>
+      <li>
+        <span class="format-name">Podcast / Media</span>
+        <span class="format-detail">Available for podcast interviews, webinars, and written Q&amp;A.</span>
+      </li>
+    </ul>
+  </section>
 
-    <!-- Booking Section -->
-    <section class="booking">
-        <div class="section-inner">
-            <span class="section-label">Get Started</span>
-            <h2>Booking is simple.</h2>
-            <p>Fast replies. Clear logistics. No friction.</p>
-            <div class="booking-steps">
-                <div class="booking-step">
-                    <div class="booking-step-number">1</div>
-                    <h4>Request Availability</h4>
-                    <p>Book a 30-minute call</p>
-                </div>
-                <div class="booking-step">
-                    <div class="booking-step-number">2</div>
-                    <h4>Align on Outcome</h4>
-                    <p>Tailor the talk to your context</p>
-                </div>
-                <div class="booking-step">
-                    <div class="booking-step-number">3</div>
-                    <h4>Confirm & Deliver</h4>
-                    <p>Lock in the date and show up</p>
-                </div>
-            </div>
-            <a href="https://calendly.com/dubltap66/30min" class="btn btn-primary">
-                Request Availability
-            </a>
-        </div>
-    </section>
+  <!-- CREDIBILITY -->
+  <section>
+    <div class="section-label">Background</div>
+    <h2>Why listen to me.</h2>
+    <div class="cred-grid">
+      <div class="cred-item">
+        <div class="cred-label">Current</div>
+        <div class="cred-value">General Manager, VERUS Associates — $2.81M P&amp;L</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-label">Builder</div>
+        <div class="cred-value">Founder, dubltap.io — 9 AI apps shipped</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-label">Enterprise Sales</div>
+        <div class="cred-value">$2M+ ARR at Nintex, $45M+ career revenue</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-label">Microsoft</div>
+        <div class="cred-value">Partner programs adopted by 200+ partners</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-label">Published</div>
+        <div class="cred-value">Mind Beyond Mind (Amazon)</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-label">Security</div>
+        <div class="cred-value">Active researcher on HackerOne</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-name">Christopher Grove</div>
-        <div class="footer-title">Convergence Architect · Keynote Speaker · Technology Evangelist</div>
-        <div class="footer-links">
-            <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>
-            <a href="mailto:chris.a.grove@gmail.com">Email</a>
-            <a href="tel:+13608744712">(360) 874-4712</a>
-        </div>
-        <div class="footer-location">Seattle–Tacoma, WA</div>
-        <p class="footer-quote">
-            "The best systems don't add cognitive load. They absorb it — so people can think clearly when it matters most. That's true for technology. That's true for teams. That's the operating system."
-        </p>
-        <div class="footer-copyright">© 2025 Christopher Grove. All rights reserved.</div>
-    </footer>
+  <!-- CTA -->
+  <section style="text-align:center; max-width:600px;">
+    <h2 style="margin-bottom:12px;">Let's talk.</h2>
+    <p style="margin:0 auto 24px; text-align:center;">Reach out with the event, audience, and topic area. I'll respond within 24 hours.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="mailto:chris.a.grove@gmail.com" class="primary">Email Me</a>
+      <a href="https://linkedin.com/in/christopher-a-grove" class="secondary">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">Everett, WA &bull; &copy; 2026 Christopher Grove</div>
+    <div class="footer-links">
+      <a href="mailto:chris.a.grove@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/christopher-a-grove">LinkedIn</a>
+      <a href="https://github.com/dubltap">GitHub</a>
+      <a href="https://dubltap.io">dubltap.io</a>
+    </div>
+  </footer>
 
 </body>
 </html>
