@@ -1,9 +1,5 @@
 # Christopher Grove
 
-<div align="center">
-  <img src="assets/christopher-grove-headshot.jpg" alt="Christopher Grove — General Manager and VP Sales and Operations leader" width="180">
-</div>
-
 **General Manager | VP Sales & Operations | Enterprise Solutions | Product Builder**
 
 Everett, WA &bull; [christopher-grove.com](https://christopher-grove.com) &bull; [LinkedIn](https://linkedin.com/in/christopher-a-grove) &bull; [dubltap.io](https://dubltap.io) &bull; [Email](mailto:chris.a.grove@gmail.com)
@@ -44,19 +40,19 @@ I build and ship AI-powered web applications at [dubltap.io](https://dubltap.io)
 
 ## Experience
 
-**General Manager** — VERUS Associates | 2023–Present | Everett, WA
+**General Manager** — VERUS Associates | 2025–Present | Everett, WA
 Full P&L ownership for industrial automation and controls office. $2.81M revenue (2025). Grew billing rate from $160/hr to $205/hr. Lead business development, project delivery, and team of 4. Report to CEO.
 
 **Founder & Developer** — dubltap.io (M&P Holdings LLC) | 2024–Present | Everett, WA
 Built and launched 9 AI-powered web applications. React/TypeScript/Tailwind stack. Consistent design system, full Netlify infrastructure, SEO pipeline. All apps live and deployed.
 
-**VP of Sales & Partnerships** — Apptigent | 2022–2023 | Remote
+**VP of Sales & Partnerships** — Apptigent | 2019–2025 | Remote
 Built enterprise sales motion and partner ecosystem from scratch for automation platform targeting Fortune 500 clients. Owned GTM strategy, technical discovery, and solution design.
 
-**Enterprise Account Executive** — Nintex | 2020–2022 | Remote
+**Enterprise Account Executive** — Nintex | 2016–2019 | Remote
 $2M+ ARR closed in enterprise workflow automation. Full-cycle sales across manufacturing and financial services. Won on technical credibility and executive relationships.
 
-**Partner Technology Strategist** — Microsoft | 2012–2014 | Seattle, WA
+**Partner Technology Strategist** — Microsoft | 2012–2016 | Seattle, WA
 Led global partner automation programs. Built frameworks adopted by 200+ partners. Redesigned partner success methodology, driving adoption from 30% to 70%+.
 
 **Sales & Operations Leadership** — Enterprise Solutions & Industrial Automation | Earlier Career
