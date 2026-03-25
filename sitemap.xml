@@ -1,15 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://christopher-grove.com/</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://christopher-grove.com/speaking.html</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+          xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
+    <!-- CORE PAGES -->
+    <url>
+          <loc>https://christopher-grove.com/</loc>
+          <lastmod>2026-03-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/speaking</loc>
+          <lastmod>2026-03-24</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/onesheet</loc>
+          <lastmod>2026-03-24</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <!-- BLOG -->
+    <url>
+          <loc>https://christopher-grove.com/blog</loc>
+          <lastmod>2026-03-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.9</priority>
+    </url>
+
+    <!-- BLOG POSTS -->
+    <url>
+          <loc>https://christopher-grove.com/blog/the-adoption-gap</loc>
+          <lastmod>2026-03-24</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/plcs-meet-llms</loc>
+          <lastmod>2026-03-20</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/operator-advantage</loc>
+          <lastmod>2026-03-15</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/shipping-production-ai</loc>
+          <lastmod>2026-03-10</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/complacency-compounds</loc>
+          <lastmod>2026-03-05</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <!-- BLOG CATEGORIES -->
+    <url>
+          <loc>https://christopher-grove.com/blog/category/ai-adoption</loc>
+          <lastmod>2026-03-24</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/category/leadership</loc>
+          <lastmod>2026-03-15</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/category/industrial-ai</loc>
+          <lastmod>2026-03-20</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+    </url>
+
+    <url>
+          <loc>https://christopher-grove.com/blog/category/building</loc>
+          <lastmod>2026-03-10</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+    </url>
 </urlset>
