@@ -1,0 +1,23 @@
+# Redirect old netlify.app domain to custom domain
+https://christophergrove.netlify.app/* https://christopher-grove.com/:splat 301!
+
+# Clean URLs (serve .html files without extension)
+/speaking    /speaking.html    200
+/onesheet    /onesheet.html    200
+/blog        /blog/index.html  200
+
+# Blog posts clean URLs
+/blog/the-adoption-gap        /blog/the-adoption-gap.html       200
+/blog/plcs-meet-llms          /blog/plcs-meet-llms.html         200
+/blog/operator-advantage      /blog/operator-advantage.html     200
+/blog/shipping-production-ai  /blog/shipping-production-ai.html 200
+/blog/complacency-compounds   /blog/complacency-compounds.html  200
+
+# Category pages
+/blog/category/ai-adoption    /blog/category/ai-adoption.html   200
+/blog/category/leadership     /blog/category/leadership.html    200
+/blog/category/industrial-ai  /blog/category/industrial-ai.html 200
+/blog/category/building       /blog/category/building.html      200
+
+# 404 fallback
+/*    /404.html    404
