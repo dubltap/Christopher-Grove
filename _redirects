@@ -1,5 +1,5 @@
-# Redirect old netlify.app domain to custom domain
-https://christophergrove.netlify.app/* https://christopher-grove.com/:splat 301!
+h# Redirect old netlify.app domain to custom domain
+https://christopher-grove.netlify.app/* https://christopher-grove.com/:splat 301!
 
 # Clean URLs (serve .html files without extension)
 /speaking    /speaking.html    200
